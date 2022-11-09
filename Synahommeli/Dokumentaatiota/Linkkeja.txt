@@ -1,0 +1,3 @@
+Agilent 33220A 20 MHz Function/Arbitrary Waveform Generator Data Sheet:
+https://res.cloudinary.com/iwh/image/upload/q_auto,g_center/assets/1/26/Documents/Agilent/agilent5988-8544en.pdf
+http://lmu.web.psi.ch/docu/manuals/bulk_manuals/Agilent/33220-90010.pdf
