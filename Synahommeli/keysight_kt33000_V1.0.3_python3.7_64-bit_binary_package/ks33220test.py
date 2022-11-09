@@ -26,7 +26,7 @@ def main():
     #resource_name = "TCPIP0::<IP_Address>::INSTR"
     idQuery = True
     reset   = True
-    options = "QueryInstrStatus=true, Simulate=true, Trace=true"
+    options = "QueryInstrStatus=true, Simulate=false, Trace=true"
 
     try:
         print("\n  keysight_kt33000 Python API Example1\n")
@@ -116,6 +116,12 @@ def main():
         #event -= srq_event_handler # Alternate syntax
 
         # End configure and test SRQs
+
+        driver.system.write_string("FREQuency 25000")
+
+        time.sleep(5)
+
+        driver.system.write_string("FREQuency 69000") #NAMA ON TARKEITA!!!!!
 
 
         # Check instrument for errors
