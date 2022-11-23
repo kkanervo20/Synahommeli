@@ -33,7 +33,7 @@ def midi_received(data, unused):
 ################################################################
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--midi", type=str, default = "Focusrite USB MIDI 0", help = "Keyword identifying the MIDI input device (default: %(default)s).")
+    parser.add_argument("--midi", type=str, default = "MIDIIN2", help = "Keyword identifying the MIDI input device (default: %(default)s).")
     args = parser.parse_args()
 
     # Initialize the MIDI input system and read the currently available ports.

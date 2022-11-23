@@ -524,3 +524,897 @@
    Info -   2.745409 s     14.5 uS    Returned: value=Kt33000_LogOutput.txt
    Info -   2.746622 s      1.2 mS  --- Kt33000.Close() ---
    Info -   2.748239 s      1.6 mS  2022-11-23 14_05_31 - flush request
+
+  Level     TimeStamp    DeltaTime    Message
+   Info -   0.000000 s        0 nS  Kt33000(USB0::0x0957::0x0407::MY44016868::0::INSTR, true, true, QueryInstrStatus=true, Simulate=false, Trace=true)
+  Debug -   0.069192 s     69.2 mS    Command: *IDN?
+  Debug -   0.072200 s      3.0 mS    Response: Agilent Technologies,33220A,MY44016868,2.00-2.00-22-2
+  Debug -   0.072211 s     10.9 uS    Command: *RST;*OPC?
+  Debug -   0.178235 s    106.0 mS    Response: 1
+  Debug -   0.178248 s     12.6 uS    Command: *CLS
+   Info -   0.178652 s    404.7 uS  IviDriverIdentity.GetInstrumentModel()
+   Info -   0.178660 s      7.4 uS    Returned: value=33220A
+   Info -   0.179496 s    835.9 uS  IviDriverIdentity.GetInstrumentModel()
+   Info -   0.179505 s      9.9 uS    Returned: value=33220A
+   Info -   0.179799 s    293.7 uS  IviDriverOperation.GetIOResourceDescriptor()
+   Info -   0.179806 s      7.1 uS    Returned: value=USB0::0x0957::0x0407::MY44016868::0::INSTR
+   Info -   0.180126 s    320.1 uS  IviDriverOperation.GetDriverSetup()
+   Info -   0.180136 s      9.3 uS    Returned: value=QueryInstrStatus=true, Simulate=false, Trace=true
+   Info -   0.181010 s    874.6 uS  StatusStandardEvent.SetEnableRegister(value=OperationComplete)
+  Debug -   0.181035 s     25.1 uS    Command: *ESE 1
+  Debug -   0.181201 s    165.7 uS    Command: *ESR?
+  Debug -   0.182035 s    834.3 uS    Response: +0
+   Info -   0.182104 s     68.7 uS  Status.SetServiceRequestEnableRegister(value=StandardEventSummary)
+  Debug -   0.182116 s     11.7 uS    Command: *SRE 32
+  Debug -   0.182204 s     87.9 uS    Command: *ESR?
+  Debug -   0.183024 s    820.1 uS    Response: +0
+   Info -   0.183062 s     37.9 uS  Status.Clear()
+  Debug -   0.183075 s     12.9 uS    Command: *CLS
+  Debug -   0.183172 s     97.1 uS    Command: *ESR?
+  Debug -   0.183931 s    759.0 uS    Response: +0
+   Info -   0.184455 s    524.3 uS  System.WriteString(data=*OPC)
+  Debug -   0.184459 s      4.1 uS    Command: *OPC
+   Info -   0.236470 s     52.0 mS  Status.SerialPoll()
+   Info -   0.236571 s    101.7 uS    Returned: ret=StandardEventSummary|RequestServiceSummary
+   Info -   0.236589 s     17.3 uS  IviDriverOperation.GetSimulate()
+   Info -   0.236590 s      1.9 uS    Returned: value=False
+   Info -   0.237235 s    644.1 uS  StatusStandardEvent.ReadEventRegister()
+  Debug -   0.237251 s     16.4 uS    Command: *ESR?
+  Debug -   0.237899 s    648.1 uS    Response: +1
+  Debug -   0.237918 s     19.1 uS    Command: *ESR?
+  Debug -   0.238527 s    609.0 uS    Response: +0
+   Info -   0.238539 s     11.7 uS    Returned: ret=OperationComplete
+   Info -   0.239236 s    697.3 uS  Kt33000StatusImpl::GetServiceRequestEvent()
+   Info -   0.239240 s      3.6 uS    Returned: KtEventT<Keysight::Kt33000::ServiceRequestEventArgs>
+   Info -   0.239265 s     25.7 uS  Status.Clear()
+  Debug -   0.239279 s     13.6 uS    Command: *CLS
+  Debug -   0.239396 s    117.4 uS    Command: *ESR?
+  Debug -   0.240139 s    742.9 uS    Response: +0
+   Info -   0.240176 s     36.6 uS  Status.EnableServiceRequestEvents()
+   Info -   0.240281 s    105.4 uS  System.WriteString(data=*OPC)
+  Debug -   0.240282 s      900 nS    Command: *OPC
+   Info -   0.241470 s      1.2 mS  System.ClearIO()
+   Info -   0.308700 s     67.2 mS  StatusStandardEvent.ReadEventRegister()
+  Debug -   0.308730 s     29.4 uS    Command: *ESR?
+  Debug -   0.312065 s      3.3 mS    Response: +1
+  Debug -   0.312079 s     14.4 uS    Command: *ESR?
+  Debug -   0.312641 s    561.8 uS    Response: +0
+   Info -   0.312652 s     11.3 uS    Returned: ret=OperationComplete
+   Info -   0.741597 s    428.9 mS  System.WriteString(data=FREQuency 42069)
+  Debug -   0.741602 s      5.0 uS    Command: FREQuency 42069
+   Info -   2.743233 s    2.002 s  System.WriteString(data=FREQuency 69696.969)
+  Debug -   2.743236 s      3.0 uS    Command: FREQuency 69696.969
+   Info -   2.743425 s    189.1 uS  System.WriteString(data=FREQuency 0)
+  Debug -   2.743427 s      1.3 uS    Command: FREQuency 0
+   Info -   4.844754 s    2.101 s  System.WriteString(data=FREQuency 1000)
+  Debug -   4.844757 s      3.0 uS    Command: FREQuency 1000
+   Info -   6.844966 s    2.000 s  System.WriteString(data=FREQuency 2000)
+  Debug -   6.844969 s      3.0 uS    Command: FREQuency 2000
+   Info -   8.747885 s    1.903 s  System.WriteString(data=FREQuency 3000)
+  Debug -   8.747889 s      3.2 uS    Command: FREQuency 3000
+   Info -  10.549089 s    1.801 s  System.WriteString(data=FREQuency 4000)
+  Debug -  10.549093 s      4.2 uS    Command: FREQuency 4000
+   Info -  12.250432 s    1.701 s  System.WriteString(data=FREQuency 5000)
+  Debug -  12.250436 s      3.9 uS    Command: FREQuency 5000
+   Info -  13.851409 s    1.601 s  System.WriteString(data=FREQuency 6000)
+  Debug -  13.851413 s      4.1 uS    Command: FREQuency 6000
+   Info -  15.352040 s    1.501 s  System.WriteString(data=FREQuency 7000)
+  Debug -  15.352043 s      3.1 uS    Command: FREQuency 7000
+   Info -  16.752716 s    1.401 s  System.WriteString(data=FREQuency 8000)
+  Debug -  16.752719 s      3.0 uS    Command: FREQuency 8000
+   Info -  18.053356 s    1.301 s  System.WriteString(data=FREQuency 9000)
+  Debug -  18.053360 s      3.9 uS    Command: FREQuency 9000
+   Info -  19.255753 s    1.202 s  System.WriteString(data=FREQuency 10000)
+  Debug -  19.255758 s      4.5 uS    Command: FREQuency 10000
+   Info -  20.355790 s    1.100 s  System.WriteString(data=FREQuency 11000)
+  Debug -  20.355795 s      5.1 uS    Command: FREQuency 11000
+   Info -  21.356290 s    1.000 s  System.WriteString(data=FREQuency 12000)
+  Debug -  21.356293 s      3.3 uS    Command: FREQuency 12000
+   Info -  22.257998 s    901.7 mS  System.WriteString(data=FREQuency 13000)
+  Debug -  22.258001 s      3.3 uS    Command: FREQuency 13000
+   Info -  23.059615 s    801.6 mS  System.WriteString(data=FREQuency 14000)
+  Debug -  23.059618 s      3.0 uS    Command: FREQuency 14000
+   Info -  23.760371 s    700.8 mS  System.WriteString(data=FREQuency 15000)
+  Debug -  23.760374 s      3.2 uS    Command: FREQuency 15000
+   Info -  24.362042 s    601.7 mS  System.WriteString(data=FREQuency 16000)
+  Debug -  24.362046 s      4.1 uS    Command: FREQuency 16000
+   Info -  24.863489 s    501.4 mS  System.WriteString(data=FREQuency 17000)
+  Debug -  24.863492 s      2.9 uS    Command: FREQuency 17000
+   Info -  25.265016 s    401.5 mS  System.WriteString(data=FREQuency 18000)
+  Debug -  25.265020 s      3.5 uS    Command: FREQuency 18000
+   Info -  25.567696 s    302.7 mS  System.WriteString(data=FREQuency 19000)
+  Debug -  25.567698 s      2.7 uS    Command: FREQuency 19000
+   Info -  25.769863 s    202.2 mS  IviDriverUtility.ErrorQuery()
+  Debug -  25.769867 s      3.8 uS    Command: SYST:ERR?
+  Debug -  25.771589 s      1.7 mS    Response: -222,"Data out of range; frequency;value clipped to lower limit."
+   Info -  25.771656 s     66.6 uS    Returned: ret=ErrorQueryResult{Code:-222, Message:"Data out of range; frequency;value clipped to lower limit."}
+   Info -  25.772268 s    612.0 uS  IviDriverUtility.ErrorQuery()
+  Debug -  25.772270 s      2.3 uS    Command: SYST:ERR?
+  Debug -  25.773135 s    864.8 uS    Response: +0,"No error"
+   Info -  25.773163 s     27.8 uS    Returned: ret=ErrorQueryResult{Code:0, Message:"No error"}
+   Info -  25.774290 s      1.1 mS  SystemTracing.GetFileName()
+   Info -  25.774308 s     18.6 uS    Returned: value=Kt33000_LogOutput.txt
+   Info -  25.775674 s      1.4 mS  --- Kt33000.Close() ---
+   Info -  25.778118 s      2.4 mS  2022-11-23 14_08_57 - flush request
+
+  Level     TimeStamp    DeltaTime    Message
+   Info -   0.000000 s        0 nS  Kt33000(USB0::0x0957::0x0407::MY44016868::0::INSTR, true, true, QueryInstrStatus=true, Simulate=false, Trace=true)
+  Debug -   0.069149 s     69.1 mS    Command: *IDN?
+  Debug -   0.072809 s      3.7 mS    Response: Agilent Technologies,33220A,MY44016868,2.00-2.00-22-2
+  Debug -   0.072823 s     14.3 uS    Command: *RST;*OPC?
+  Debug -   0.178916 s    106.1 mS    Response: 1
+  Debug -   0.178929 s     12.7 uS    Command: *CLS
+   Info -   0.179322 s    393.3 uS  IviDriverIdentity.GetInstrumentModel()
+   Info -   0.179330 s      7.2 uS    Returned: value=33220A
+   Info -   0.180121 s    791.7 uS  IviDriverIdentity.GetInstrumentModel()
+   Info -   0.180131 s      9.7 uS    Returned: value=33220A
+   Info -   0.180450 s    319.0 uS  IviDriverOperation.GetIOResourceDescriptor()
+   Info -   0.180462 s     11.7 uS    Returned: value=USB0::0x0957::0x0407::MY44016868::0::INSTR
+   Info -   0.180759 s    297.0 uS  IviDriverOperation.GetDriverSetup()
+   Info -   0.180767 s      8.7 uS    Returned: value=QueryInstrStatus=true, Simulate=false, Trace=true
+   Info -   0.181613 s    845.8 uS  StatusStandardEvent.SetEnableRegister(value=OperationComplete)
+  Debug -   0.181648 s     34.3 uS    Command: *ESE 1
+  Debug -   0.181838 s    190.3 uS    Command: *ESR?
+  Debug -   0.182776 s    938.5 uS    Response: +0
+   Info -   0.182874 s     98.1 uS  Status.SetServiceRequestEnableRegister(value=StandardEventSummary)
+  Debug -   0.182889 s     14.5 uS    Command: *SRE 32
+  Debug -   0.183009 s    119.9 uS    Command: *ESR?
+  Debug -   0.183817 s    808.0 uS    Response: +0
+   Info -   0.183850 s     33.6 uS  Status.Clear()
+  Debug -   0.183860 s     10.0 uS    Command: *CLS
+  Debug -   0.183953 s     92.6 uS    Command: *ESR?
+  Debug -   0.184887 s    934.3 uS    Response: +0
+   Info -   0.185437 s    549.4 uS  System.WriteString(data=*OPC)
+  Debug -   0.185441 s      4.0 uS    Command: *OPC
+   Info -   0.237082 s     51.6 mS  Status.SerialPoll()
+   Info -   0.237194 s    111.7 uS    Returned: ret=StandardEventSummary|RequestServiceSummary
+   Info -   0.237211 s     17.5 uS  IviDriverOperation.GetSimulate()
+   Info -   0.237213 s      1.9 uS    Returned: value=False
+   Info -   0.237859 s    646.3 uS  StatusStandardEvent.ReadEventRegister()
+  Debug -   0.237876 s     16.2 uS    Command: *ESR?
+  Debug -   0.238506 s    630.7 uS    Response: +1
+  Debug -   0.238556 s     50.1 uS    Command: *ESR?
+  Debug -   0.239182 s    626.0 uS    Response: +0
+   Info -   0.239193 s     11.1 uS    Returned: ret=OperationComplete
+   Info -   0.239885 s    691.1 uS  Kt33000StatusImpl::GetServiceRequestEvent()
+   Info -   0.239888 s      3.4 uS    Returned: KtEventT<Keysight::Kt33000::ServiceRequestEventArgs>
+   Info -   0.239913 s     24.9 uS  Status.Clear()
+  Debug -   0.239928 s     14.7 uS    Command: *CLS
+  Debug -   0.240050 s    122.0 uS    Command: *ESR?
+  Debug -   0.240780 s    730.5 uS    Response: +0
+   Info -   0.240811 s     30.5 uS  Status.EnableServiceRequestEvents()
+   Info -   0.240904 s     93.4 uS  System.WriteString(data=*OPC)
+  Debug -   0.240905 s      900 nS    Command: *OPC
+   Info -   0.242252 s      1.3 mS  System.ClearIO()
+   Info -   0.307234 s     65.0 mS  StatusStandardEvent.ReadEventRegister()
+  Debug -   0.307252 s     17.5 uS    Command: *ESR?
+  Debug -   0.309685 s      2.4 mS    Response: +1
+  Debug -   0.309697 s     11.4 uS    Command: *ESR?
+  Debug -   0.310269 s    572.9 uS    Response: +0
+   Info -   0.310280 s     10.7 uS    Returned: ret=OperationComplete
+   Info -   0.742184 s    431.9 mS  System.WriteString(data=FREQuency 42069)
+  Debug -   0.742188 s      3.7 uS    Command: FREQuency 42069
+   Info -   2.743421 s    2.001 s  System.WriteString(data=FREQuency 69696)
+  Debug -   2.743424 s      3.3 uS    Command: FREQuency 69696
+   Info -   2.743636 s    211.6 uS  System.WriteString(data=FREQuency -500)
+  Debug -   2.743637 s      1.2 uS    Command: FREQuency -500
+   Info -   4.844667 s    2.101 s  System.WriteString(data=FREQuency 500)
+  Debug -   4.844680 s     12.4 uS    Command: FREQuency 500
+   Info -   6.845707 s    2.001 s  System.WriteString(data=FREQuency 1500)
+  Debug -   6.845712 s      4.3 uS    Command: FREQuency 1500
+   Info -   8.747928 s    1.902 s  System.WriteString(data=FREQuency 2500)
+  Debug -   8.747933 s      4.3 uS    Command: FREQuency 2500
+   Info -  10.549216 s    1.801 s  System.WriteString(data=FREQuency 3500)
+  Debug -  10.549219 s      3.3 uS    Command: FREQuency 3500
+   Info -  12.250299 s    1.701 s  System.WriteString(data=FREQuency 4500)
+  Debug -  12.250302 s      3.4 uS    Command: FREQuency 4500
+   Info -  13.852020 s    1.602 s  System.WriteString(data=FREQuency 5500)
+  Debug -  13.852023 s      3.6 uS    Command: FREQuency 5500
+   Info -  15.353113 s    1.501 s  System.WriteString(data=FREQuency 6500)
+  Debug -  15.353117 s      3.4 uS    Command: FREQuency 6500
+   Info -  16.754675 s    1.402 s  System.WriteString(data=FREQuency 7500)
+  Debug -  16.754679 s      3.8 uS    Command: FREQuency 7500
+   Info -  18.055058 s    1.300 s  System.WriteString(data=FREQuency 8500)
+  Debug -  18.055061 s      3.4 uS    Command: FREQuency 8500
+   Info -  19.257054 s    1.202 s  System.WriteString(data=FREQuency 9500)
+  Debug -  19.257057 s      3.0 uS    Command: FREQuency 9500
+   Info -  20.358119 s    1.101 s  System.WriteString(data=FREQuency 10500)
+  Debug -  20.358123 s      4.3 uS    Command: FREQuency 10500
+   Info -  21.358858 s    1.001 s  System.WriteString(data=FREQuency 11500)
+  Debug -  21.358870 s     11.3 uS    Command: FREQuency 11500
+   Info -  22.260805 s    901.9 mS  System.WriteString(data=FREQuency 12500)
+  Debug -  22.260809 s      3.8 uS    Command: FREQuency 12500
+   Info -  23.061898 s    801.1 mS  System.WriteString(data=FREQuency 13500)
+  Debug -  23.061902 s      4.3 uS    Command: FREQuency 13500
+   Info -  23.763739 s    701.8 mS  System.WriteString(data=FREQuency 14500)
+  Debug -  23.763745 s      5.7 uS    Command: FREQuency 14500
+   Info -  24.364935 s    601.2 mS  System.WriteString(data=FREQuency 15500)
+  Debug -  24.364939 s      4.1 uS    Command: FREQuency 15500
+   Info -  24.865845 s    500.9 mS  System.WriteString(data=FREQuency 16500)
+  Debug -  24.865848 s      3.1 uS    Command: FREQuency 16500
+   Info -  25.266862 s    401.0 mS  System.WriteString(data=FREQuency 17500)
+  Debug -  25.266866 s      3.8 uS    Command: FREQuency 17500
+   Info -  25.569827 s    303.0 mS  System.WriteString(data=FREQuency 18500)
+  Debug -  25.569830 s      3.0 uS    Command: FREQuency 18500
+   Info -  25.770157 s    200.3 mS  IviDriverUtility.ErrorQuery()
+  Debug -  25.770165 s      7.9 uS    Command: SYST:ERR?
+  Debug -  25.771927 s      1.8 mS    Response: -222,"Data out of range; frequency;value clipped to lower limit."
+   Info -  25.771989 s     62.2 uS    Returned: ret=ErrorQueryResult{Code:-222, Message:"Data out of range; frequency;value clipped to lower limit."}
+   Info -  25.772465 s    475.6 uS  IviDriverUtility.ErrorQuery()
+  Debug -  25.772467 s      2.2 uS    Command: SYST:ERR?
+  Debug -  25.773278 s    811.2 uS    Response: +0,"No error"
+   Info -  25.773300 s     21.8 uS    Returned: ret=ErrorQueryResult{Code:0, Message:"No error"}
+   Info -  25.773894 s    594.0 uS  SystemTracing.GetFileName()
+   Info -  25.773903 s      9.5 uS    Returned: value=Kt33000_LogOutput.txt
+   Info -  25.774985 s      1.1 mS  --- Kt33000.Close() ---
+   Info -  25.777663 s      2.7 mS  2022-11-23 14_10_11 - flush request
+
+  Level     TimeStamp    DeltaTime    Message
+   Info -   0.000000 s        0 nS  Kt33000(USB0::0x0957::0x0407::MY44016868::0::INSTR, true, true, QueryInstrStatus=true, Simulate=false, Trace=true)
+  Debug -   0.069810 s     69.8 mS    Command: *IDN?
+  Debug -   0.073598 s      3.8 mS    Response: Agilent Technologies,33220A,MY44016868,2.00-2.00-22-2
+  Debug -   0.073627 s     29.7 uS    Command: *RST;*OPC?
+  Debug -   0.179761 s    106.1 mS    Response: 1
+  Debug -   0.179774 s     13.6 uS    Command: *CLS
+   Info -   0.180228 s    454.0 uS  IviDriverIdentity.GetInstrumentModel()
+   Info -   0.180235 s      6.9 uS    Returned: value=33220A
+   Info -   0.181027 s    791.3 uS  IviDriverIdentity.GetInstrumentModel()
+   Info -   0.181037 s     10.8 uS    Returned: value=33220A
+   Info -   0.181579 s    541.9 uS  IviDriverOperation.GetIOResourceDescriptor()
+   Info -   0.181592 s     12.3 uS    Returned: value=USB0::0x0957::0x0407::MY44016868::0::INSTR
+   Info -   0.181889 s    297.2 uS  IviDriverOperation.GetDriverSetup()
+   Info -   0.181894 s      4.9 uS    Returned: value=QueryInstrStatus=true, Simulate=false, Trace=true
+   Info -   0.182642 s    748.0 uS  StatusStandardEvent.SetEnableRegister(value=OperationComplete)
+  Debug -   0.182669 s     27.6 uS    Command: *ESE 1
+  Debug -   0.182873 s    204.0 uS    Command: *ESR?
+  Debug -   0.183729 s    856.0 uS    Response: +0
+   Info -   0.183794 s     64.5 uS  Status.SetServiceRequestEnableRegister(value=StandardEventSummary)
+  Debug -   0.183804 s     10.6 uS    Command: *SRE 32
+  Debug -   0.183889 s     84.4 uS    Command: *ESR?
+  Debug -   0.184710 s    820.8 uS    Response: +0
+   Info -   0.184751 s     41.3 uS  Status.Clear()
+  Debug -   0.184764 s     12.7 uS    Command: *CLS
+  Debug -   0.184862 s     98.3 uS    Command: *ESR?
+  Debug -   0.185631 s    768.6 uS    Response: +0
+   Info -   0.186053 s    422.5 uS  System.WriteString(data=*OPC)
+  Debug -   0.186057 s      3.6 uS    Command: *OPC
+   Info -   0.236935 s     50.9 mS  Status.SerialPoll()
+   Info -   0.237043 s    107.5 uS    Returned: ret=StandardEventSummary|RequestServiceSummary
+   Info -   0.237061 s     17.9 uS  IviDriverOperation.GetSimulate()
+   Info -   0.237063 s      2.1 uS    Returned: value=False
+   Info -   0.237727 s    664.0 uS  StatusStandardEvent.ReadEventRegister()
+  Debug -   0.237751 s     24.2 uS    Command: *ESR?
+  Debug -   0.238484 s    733.4 uS    Response: +1
+  Debug -   0.238511 s     26.5 uS    Command: *ESR?
+  Debug -   0.239130 s    618.7 uS    Response: +0
+   Info -   0.239153 s     23.8 uS    Returned: ret=OperationComplete
+   Info -   0.240455 s      1.3 mS  Kt33000StatusImpl::GetServiceRequestEvent()
+   Info -   0.240469 s     13.9 uS    Returned: KtEventT<Keysight::Kt33000::ServiceRequestEventArgs>
+   Info -   0.240522 s     52.2 uS  Status.Clear()
+  Debug -   0.240558 s     36.8 uS    Command: *CLS
+  Debug -   0.240742 s    183.7 uS    Command: *ESR?
+  Debug -   0.241594 s    852.4 uS    Response: +0
+   Info -   0.241676 s     81.8 uS  Status.EnableServiceRequestEvents()
+   Info -   0.241827 s    151.2 uS  System.WriteString(data=*OPC)
+  Debug -   0.241829 s      1.5 uS    Command: *OPC
+   Info -   0.243419 s      1.6 mS  System.ClearIO()
+   Info -   0.309266 s     65.8 mS  StatusStandardEvent.ReadEventRegister()
+  Debug -   0.309284 s     18.0 uS    Command: *ESR?
+  Debug -   0.312499 s      3.2 mS    Response: +1
+  Debug -   0.312511 s     12.5 uS    Command: *ESR?
+  Debug -   0.313084 s    572.9 uS    Response: +0
+   Info -   0.313095 s     11.3 uS    Returned: ret=OperationComplete
+   Info -   0.743353 s    430.3 mS  System.WriteString(data=FREQuency 42069)
+  Debug -   0.743355 s      2.7 uS    Command: FREQuency 42069
+   Info -   2.743364 s    2.000 s  System.WriteString(data=FREQuency 69696)
+  Debug -   2.743368 s      3.7 uS    Command: FREQuency 69696
+   Info -   2.743574 s    206.0 uS  System.WriteString(data=FREQuency -500)
+  Debug -   2.743575 s      1.1 uS    Command: FREQuency -500
+   Info -   3.844518 s    1.101 s  System.WriteString(data=FREQuency 500)
+  Debug -   3.844522 s      4.2 uS    Command: FREQuency 500
+   Info -   4.894706 s    1.050 s  System.WriteString(data=FREQuency 1500)
+  Debug -   4.894710 s      4.2 uS    Command: FREQuency 1500
+   Info -   5.894452 s    999.7 mS  System.WriteString(data=FREQuency 2500)
+  Debug -   5.894456 s      3.6 uS    Command: FREQuency 2500
+   Info -   6.845607 s    951.2 mS  System.WriteString(data=FREQuency 3500)
+  Debug -   6.845610 s      3.4 uS    Command: FREQuency 3500
+   Info -   7.748416 s    902.8 mS  System.WriteString(data=FREQuency 4500)
+  Debug -   7.748419 s      3.3 uS    Command: FREQuency 4500
+   Info -   8.599977 s    851.6 mS  System.WriteString(data=FREQuency 5500)
+  Debug -   8.599981 s      3.6 uS    Command: FREQuency 5500
+   Info -   9.402181 s    802.2 mS  System.WriteString(data=FREQuency 6500)
+  Debug -   9.402186 s      4.5 uS    Command: FREQuency 6500
+   Info -  10.153769 s    751.6 mS  System.WriteString(data=FREQuency 7500)
+  Debug -  10.153774 s      5.3 uS    Command: FREQuency 7500
+   Info -  10.856969 s    703.2 mS  System.WriteString(data=FREQuency 8500)
+  Debug -  10.856974 s      4.6 uS    Command: FREQuency 8500
+   Info -  11.510009 s    653.0 mS  System.WriteString(data=FREQuency 9500)
+  Debug -  11.510012 s      3.4 uS    Command: FREQuency 9500
+   Info -  12.112526 s    602.5 mS  System.WriteString(data=FREQuency 10500)
+  Debug -  12.112530 s      3.5 uS    Command: FREQuency 10500
+   Info -  12.664742 s    552.2 mS  System.WriteString(data=FREQuency 11500)
+  Debug -  12.664746 s      4.5 uS    Command: FREQuency 11500
+   Info -  13.164553 s    499.8 mS  System.WriteString(data=FREQuency 12500)
+  Debug -  13.164557 s      4.0 uS    Command: FREQuency 12500
+   Info -  13.615674 s    451.1 mS  System.WriteString(data=FREQuency 13500)
+  Debug -  13.615679 s      4.4 uS    Command: FREQuency 13500
+   Info -  14.016843 s    401.2 mS  System.WriteString(data=FREQuency 14500)
+  Debug -  14.016847 s      3.5 uS    Command: FREQuency 14500
+   Info -  14.368698 s    351.9 mS  System.WriteString(data=FREQuency 15500)
+  Debug -  14.368702 s      3.7 uS    Command: FREQuency 15500
+   Info -  14.670707 s    302.0 mS  System.WriteString(data=FREQuency 16500)
+  Debug -  14.670710 s      3.2 uS    Command: FREQuency 16500
+   Info -  14.921075 s    250.4 mS  System.WriteString(data=FREQuency 17500)
+  Debug -  14.921078 s      3.5 uS    Command: FREQuency 17500
+   Info -  15.123203 s    202.1 mS  System.WriteString(data=FREQuency 18500)
+  Debug -  15.123206 s      3.1 uS    Command: FREQuency 18500
+   Info -  15.276337 s    153.1 mS  IviDriverUtility.ErrorQuery()
+  Debug -  15.276341 s      4.0 uS    Command: SYST:ERR?
+  Debug -  15.278064 s      1.7 mS    Response: -222,"Data out of range; frequency;value clipped to lower limit."
+   Info -  15.278156 s     92.1 uS    Returned: ret=ErrorQueryResult{Code:-222, Message:"Data out of range; frequency;value clipped to lower limit."}
+   Info -  15.278756 s    600.1 uS  IviDriverUtility.ErrorQuery()
+  Debug -  15.278759 s      3.1 uS    Command: SYST:ERR?
+  Debug -  15.279583 s    823.8 uS    Response: +0,"No error"
+   Info -  15.279609 s     26.2 uS    Returned: ret=ErrorQueryResult{Code:0, Message:"No error"}
+   Info -  15.280186 s    577.3 uS  SystemTracing.GetFileName()
+   Info -  15.280196 s      9.4 uS    Returned: value=Kt33000_LogOutput.txt
+   Info -  15.281420 s      1.2 mS  --- Kt33000.Close() ---
+   Info -  15.283990 s      2.6 mS  2022-11-23 14_10_42 - flush request
+
+  Level     TimeStamp    DeltaTime    Message
+   Info -   0.000000 s        0 nS  Kt33000(USB0::0x0957::0x0407::MY44016868::0::INSTR, true, true, QueryInstrStatus=true, Simulate=false, Trace=true)
+  Debug -   0.346752 s    346.8 mS    Command: *IDN?
+  Debug -   0.350330 s      3.6 mS    Response: Agilent Technologies,33220A,MY44016868,2.00-2.00-22-2
+  Debug -   0.350344 s     13.9 uS    Command: *RST;*OPC?
+  Debug -   0.456470 s    106.1 mS    Response: 1
+  Debug -   0.456502 s     32.8 uS    Command: *CLS
+   Info -   0.456956 s    453.3 uS  IviDriverIdentity.GetInstrumentModel()
+   Info -   0.456964 s      8.4 uS    Returned: value=33220A
+   Info -   0.458149 s      1.2 mS  IviDriverIdentity.GetInstrumentModel()
+   Info -   0.458167 s     17.9 uS    Returned: value=33220A
+   Info -   0.458535 s    368.4 uS  IviDriverOperation.GetIOResourceDescriptor()
+   Info -   0.458554 s     18.5 uS    Returned: value=USB0::0x0957::0x0407::MY44016868::0::INSTR
+   Info -   0.458994 s    439.8 uS  IviDriverOperation.GetDriverSetup()
+   Info -   0.459007 s     13.7 uS    Returned: value=QueryInstrStatus=true, Simulate=false, Trace=true
+   Info -   0.460149 s      1.1 mS  StatusStandardEvent.SetEnableRegister(value=OperationComplete)
+  Debug -   0.460188 s     39.2 uS    Command: *ESE 1
+  Debug -   0.460400 s    211.7 uS    Command: *ESR?
+  Debug -   0.461292 s    892.0 uS    Response: +0
+   Info -   0.461371 s     79.3 uS  Status.SetServiceRequestEnableRegister(value=StandardEventSummary)
+  Debug -   0.461387 s     16.1 uS    Command: *SRE 32
+  Debug -   0.461507 s    119.9 uS    Command: *ESR?
+  Debug -   0.462367 s    860.4 uS    Response: +0
+   Info -   0.462420 s     52.7 uS  Status.Clear()
+  Debug -   0.462439 s     19.1 uS    Command: *CLS
+  Debug -   0.462606 s    167.2 uS    Command: *ESR?
+  Debug -   0.463435 s    828.6 uS    Response: +0
+   Info -   0.463984 s    548.7 uS  System.WriteString(data=*OPC)
+  Debug -   0.463989 s      4.9 uS    Command: *OPC
+   Info -   0.515599 s     51.6 mS  Status.SerialPoll()
+   Info -   0.515712 s    112.8 uS    Returned: ret=StandardEventSummary|RequestServiceSummary
+   Info -   0.515730 s     18.0 uS  IviDriverOperation.GetSimulate()
+   Info -   0.515732 s      2.3 uS    Returned: value=False
+   Info -   0.516690 s    957.7 uS  StatusStandardEvent.ReadEventRegister()
+  Debug -   0.516720 s     30.0 uS    Command: *ESR?
+  Debug -   0.517419 s    699.6 uS    Response: +1
+  Debug -   0.517443 s     23.9 uS    Command: *ESR?
+  Debug -   0.518062 s    619.1 uS    Response: +0
+   Info -   0.518080 s     17.2 uS    Returned: ret=OperationComplete
+   Info -   0.519087 s      1.0 mS  Kt33000StatusImpl::GetServiceRequestEvent()
+   Info -   0.519093 s      5.8 uS    Returned: KtEventT<Keysight::Kt33000::ServiceRequestEventArgs>
+   Info -   0.519130 s     36.5 uS  Status.Clear()
+  Debug -   0.519152 s     22.5 uS    Command: *CLS
+  Debug -   0.519308 s    156.4 uS    Command: *ESR?
+  Debug -   0.520241 s    932.6 uS    Response: +0
+   Info -   0.520296 s     55.3 uS  Status.EnableServiceRequestEvents()
+   Info -   0.520445 s    148.2 uS  System.WriteString(data=*OPC)
+  Debug -   0.520446 s      1.4 uS    Command: *OPC
+   Info -   0.522138 s      1.7 mS  System.ClearIO()
+   Info -   0.586736 s     64.6 mS  StatusStandardEvent.ReadEventRegister()
+  Debug -   0.586757 s     20.3 uS    Command: *ESR?
+  Debug -   0.590143 s      3.4 mS    Response: +1
+  Debug -   0.590158 s     15.1 uS    Command: *ESR?
+  Debug -   0.590719 s    560.7 uS    Response: +0
+   Info -   0.590730 s     11.2 uS    Returned: ret=OperationComplete
+   Info -   1.022606 s    431.9 mS  System.WriteString(data=FREQuency 42069)
+  Debug -   1.022609 s      2.9 uS    Command: FREQuency 42069
+   Info -   3.022787 s    2.000 s  System.WriteString(data=FREQuency 69696)
+  Debug -   3.022791 s      3.9 uS    Command: FREQuency 69696
+   Info -   3.022970 s    179.9 uS  System.WriteString(data=FREQuency -500)
+  Debug -   3.022972 s      1.3 uS    Command: FREQuency -500
+   Info -   4.125393 s    1.102 s  System.WriteString(data=FREQuency 500)
+  Debug -   4.125397 s      3.7 uS    Command: FREQuency 500
+   Info -   5.177016 s    1.052 s  System.WriteString(data=FREQuency 1500)
+  Debug -   5.177036 s     19.5 uS    Command: FREQuency 1500
+   Info -   6.177261 s    1.000 s  System.WriteString(data=FREQuency 2500)
+  Debug -   6.177264 s      3.4 uS    Command: FREQuency 2500
+   Info -   7.128424 s    951.2 mS  System.WriteString(data=FREQuency 3500)
+  Debug -   7.128427 s      3.6 uS    Command: FREQuency 3500
+   Info -   8.030719 s    902.3 mS  System.WriteString(data=FREQuency 4500)
+  Debug -   8.030724 s      4.6 uS    Command: FREQuency 4500
+   Info -   8.883726 s    853.0 mS  System.WriteString(data=FREQuency 5500)
+  Debug -   8.883733 s      6.2 uS    Command: FREQuency 5500
+   Info -   9.686599 s    802.9 mS  System.WriteString(data=FREQuency 6500)
+  Debug -   9.686604 s      5.0 uS    Command: FREQuency 6500
+   Info -  10.436439 s    749.8 mS  System.WriteString(data=FREQuency 7500)
+  Debug -  10.436442 s      3.6 uS    Command: FREQuency 7500
+   Info -  11.138415 s    702.0 mS  System.WriteString(data=FREQuency 8500)
+  Debug -  11.138419 s      3.8 uS    Command: FREQuency 8500
+   Info -  11.791076 s    652.7 mS  System.WriteString(data=FREQuency 9500)
+  Debug -  11.791080 s      3.7 uS    Command: FREQuency 9500
+   Info -  12.392055 s    601.0 mS  System.WriteString(data=FREQuency 10500)
+  Debug -  12.392059 s      3.6 uS    Command: FREQuency 10500
+   Info -  12.942198 s    550.1 mS  System.WriteString(data=FREQuency 11500)
+  Debug -  12.942203 s      4.0 uS    Command: FREQuency 11500
+   Info -  13.443069 s    500.9 mS  System.WriteString(data=FREQuency 12500)
+  Debug -  13.443072 s      3.2 uS    Command: FREQuency 12500
+   Info -  13.894048 s    451.0 mS  System.WriteString(data=FREQuency 13500)
+  Debug -  13.894052 s      3.9 uS    Command: FREQuency 13500
+   Info -  14.295045 s    401.0 mS  System.WriteString(data=FREQuency 14500)
+  Debug -  14.295049 s      3.4 uS    Command: FREQuency 14500
+   Info -  14.647156 s    352.1 mS  System.WriteString(data=FREQuency 15500)
+  Debug -  14.647160 s      3.4 uS    Command: FREQuency 15500
+   Info -  14.950043 s    302.9 mS  System.WriteString(data=FREQuency 16500)
+  Debug -  14.950048 s      5.1 uS    Command: FREQuency 16500
+   Info -  15.200358 s    250.3 mS  System.WriteString(data=FREQuency 17500)
+  Debug -  15.200362 s      3.7 uS    Command: FREQuency 17500
+   Info -  15.401293 s    200.9 mS  System.WriteString(data=FREQuency 18500)
+  Debug -  15.401297 s      4.2 uS    Command: FREQuency 18500
+   Info -  15.552493 s    151.2 mS  IviDriverUtility.ErrorQuery()
+  Debug -  15.552501 s      8.3 uS    Command: SYST:ERR?
+  Debug -  15.554183 s      1.7 mS    Response: -222,"Data out of range; frequency;value clipped to lower limit."
+   Info -  15.554242 s     59.4 uS    Returned: ret=ErrorQueryResult{Code:-222, Message:"Data out of range; frequency;value clipped to lower limit."}
+   Info -  15.554720 s    477.2 uS  IviDriverUtility.ErrorQuery()
+  Debug -  15.554722 s      2.0 uS    Command: SYST:ERR?
+  Debug -  15.555527 s    805.9 uS    Response: +0,"No error"
+   Info -  15.555553 s     25.2 uS    Returned: ret=ErrorQueryResult{Code:0, Message:"No error"}
+   Info -  15.556062 s    509.3 uS  SystemTracing.GetFileName()
+   Info -  15.556071 s      9.3 uS    Returned: value=Kt33000_LogOutput.txt
+   Info -  15.557380 s      1.3 mS  --- Kt33000.Close() ---
+   Info -  15.559746 s      2.4 mS  2022-11-23 14_12_15 - flush request
+
+  Level     TimeStamp    DeltaTime    Message
+   Info -   0.000000 s        0 nS  Kt33000(USB0::0x0957::0x0407::MY44016868::0::INSTR, true, true, QueryInstrStatus=true, Simulate=false, Trace=true)
+  Debug -   0.067924 s     67.9 mS    Command: *IDN?
+  Debug -   0.070182 s      2.3 mS    Response: Agilent Technologies,33220A,MY44016868,2.00-2.00-22-2
+  Debug -   0.070196 s     14.1 uS    Command: *RST;*OPC?
+  Debug -   0.176305 s    106.1 mS    Response: 1
+  Debug -   0.176318 s     13.4 uS    Command: *CLS
+   Info -   0.176704 s    385.6 uS  IviDriverIdentity.GetInstrumentModel()
+   Info -   0.176712 s      7.9 uS    Returned: value=33220A
+   Info -   0.177539 s    826.8 uS  IviDriverIdentity.GetInstrumentModel()
+   Info -   0.177554 s     15.5 uS    Returned: value=33220A
+   Info -   0.177928 s    373.9 uS  IviDriverOperation.GetIOResourceDescriptor()
+   Info -   0.177944 s     15.6 uS    Returned: value=USB0::0x0957::0x0407::MY44016868::0::INSTR
+   Info -   0.178300 s    356.6 uS  IviDriverOperation.GetDriverSetup()
+   Info -   0.178313 s     12.8 uS    Returned: value=QueryInstrStatus=true, Simulate=false, Trace=true
+   Info -   0.179162 s    848.9 uS  StatusStandardEvent.SetEnableRegister(value=OperationComplete)
+  Debug -   0.179194 s     32.5 uS    Command: *ESE 1
+  Debug -   0.179356 s    161.4 uS    Command: *ESR?
+  Debug -   0.180261 s    905.2 uS    Response: +0
+   Info -   0.180326 s     65.4 uS  Status.SetServiceRequestEnableRegister(value=StandardEventSummary)
+  Debug -   0.180339 s     13.0 uS    Command: *SRE 32
+  Debug -   0.180450 s    110.6 uS    Command: *ESR?
+  Debug -   0.181249 s    798.9 uS    Response: +0
+   Info -   0.181271 s     22.1 uS  Status.Clear()
+  Debug -   0.181279 s      7.9 uS    Command: *CLS
+  Debug -   0.181357 s     77.9 uS    Command: *ESR?
+  Debug -   0.182107 s    750.7 uS    Response: +0
+   Info -   0.182455 s    347.3 uS  System.WriteString(data=*OPC)
+  Debug -   0.182456 s      1.4 uS    Command: *OPC
+   Info -   0.234474 s     52.0 mS  Status.SerialPoll()
+   Info -   0.234595 s    120.9 uS    Returned: ret=StandardEventSummary|RequestServiceSummary
+   Info -   0.234615 s     20.0 uS  IviDriverOperation.GetSimulate()
+   Info -   0.234617 s      2.0 uS    Returned: value=False
+   Info -   0.235520 s    902.3 uS  StatusStandardEvent.ReadEventRegister()
+  Debug -   0.235553 s     33.1 uS    Command: *ESR?
+  Debug -   0.236194 s    641.7 uS    Response: +1
+  Debug -   0.236210 s     15.4 uS    Command: *ESR?
+  Debug -   0.236849 s    638.9 uS    Response: +0
+   Info -   0.236860 s     11.0 uS    Returned: ret=OperationComplete
+   Info -   0.237606 s    745.9 uS  Kt33000StatusImpl::GetServiceRequestEvent()
+   Info -   0.237611 s      5.5 uS    Returned: KtEventT<Keysight::Kt33000::ServiceRequestEventArgs>
+   Info -   0.237648 s     36.9 uS  Status.Clear()
+  Debug -   0.237670 s     21.9 uS    Command: *CLS
+  Debug -   0.237805 s    134.8 uS    Command: *ESR?
+  Debug -   0.238567 s    762.3 uS    Response: +0
+   Info -   0.238597 s     29.7 uS  Status.EnableServiceRequestEvents()
+   Info -   0.238696 s     99.1 uS  System.WriteString(data=*OPC)
+  Debug -   0.238696 s      600 nS    Command: *OPC
+   Info -   0.240093 s      1.4 mS  System.ClearIO()
+   Info -   0.303756 s     63.7 mS  StatusStandardEvent.ReadEventRegister()
+  Debug -   0.303774 s     17.7 uS    Command: *ESR?
+  Debug -   0.306004 s      2.2 mS    Response: +1
+  Debug -   0.306017 s     13.4 uS    Command: *ESR?
+  Debug -   0.306662 s    645.2 uS    Response: +0
+   Info -   0.306673 s     10.9 uS    Returned: ret=OperationComplete
+   Info -   0.740570 s    433.9 mS  System.WriteString(data=FREQuency 42069)
+  Debug -   0.740574 s      3.9 uS    Command: FREQuency 42069
+   Info -   2.741126 s    2.001 s  System.WriteString(data=FREQuency 69696)
+  Debug -   2.741129 s      3.3 uS    Command: FREQuency 69696
+   Info -   2.741314 s    185.2 uS  System.WriteString(data=FREQuency -500)
+  Debug -   2.741315 s      600 nS    Command: FREQuency -500
+   Info -   3.842315 s    1.101 s  System.WriteString(data=FREQuency 500)
+  Debug -   3.842319 s      4.8 uS    Command: FREQuency 500
+   Info -   4.893390 s    1.051 s  System.WriteString(data=FREQuency 1500)
+  Debug -   4.893393 s      3.6 uS    Command: FREQuency 1500
+   Info -   5.894854 s    1.001 s  System.WriteString(data=FREQuency 2500)
+  Debug -   5.894858 s      4.2 uS    Command: FREQuency 2500
+   Info -   6.848203 s    953.3 mS  System.WriteString(data=FREQuency 3500)
+  Debug -   6.848207 s      4.5 uS    Command: FREQuency 3500
+   Info -   7.750458 s    902.3 mS  System.WriteString(data=FREQuency 4500)
+  Debug -   7.750462 s      3.8 uS    Command: FREQuency 4500
+   Info -   8.603835 s    853.4 mS  System.WriteString(data=FREQuency 5500)
+  Debug -   8.603840 s      4.8 uS    Command: FREQuency 5500
+   Info -   9.406239 s    802.4 mS  System.WriteString(data=FREQuency 6500)
+  Debug -   9.406244 s      4.7 uS    Command: FREQuency 6500
+   Info -  10.157622 s    751.4 mS  System.WriteString(data=FREQuency 7500)
+  Debug -  10.157647 s     24.8 uS    Command: FREQuency 7500
+   Info -  10.859504 s    701.9 mS  System.WriteString(data=FREQuency 8500)
+  Debug -  10.859508 s      4.1 uS    Command: FREQuency 8500
+   Info -  11.511767 s    652.3 mS  System.WriteString(data=FREQuency 9500)
+  Debug -  11.511771 s      4.2 uS    Command: FREQuency 9500
+   Info -  12.113475 s    601.7 mS  System.WriteString(data=FREQuency 10500)
+  Debug -  12.113479 s      4.0 uS    Command: FREQuency 10500
+   Info -  12.665591 s    552.1 mS  System.WriteString(data=FREQuency 11500)
+  Debug -  12.665595 s      3.6 uS    Command: FREQuency 11500
+   Info -  13.165590 s    500.0 mS  System.WriteString(data=FREQuency 12500)
+  Debug -  13.165594 s      3.9 uS    Command: FREQuency 12500
+   Info -  13.617151 s    451.6 mS  System.WriteString(data=FREQuency 13500)
+  Debug -  13.617155 s      3.8 uS    Command: FREQuency 13500
+   Info -  14.018920 s    401.8 mS  System.WriteString(data=FREQuency 14500)
+  Debug -  14.018923 s      3.3 uS    Command: FREQuency 14500
+   Info -  14.371921 s    353.0 mS  System.WriteString(data=FREQuency 15500)
+  Debug -  14.371925 s      4.4 uS    Command: FREQuency 15500
+   Info -  14.675614 s    303.7 mS  System.WriteString(data=FREQuency 16500)
+  Debug -  14.675619 s      4.8 uS    Command: FREQuency 16500
+   Info -  14.925719 s    250.1 mS  System.WriteString(data=FREQuency 17500)
+  Debug -  14.925724 s      4.9 uS    Command: FREQuency 17500
+   Info -  15.126904 s    201.2 mS  System.WriteString(data=FREQuency 18500)
+  Debug -  15.126908 s      3.6 uS    Command: FREQuency 18500
+   Info -  15.277741 s    150.8 mS  IviDriverUtility.ErrorQuery()
+  Debug -  15.277745 s      4.2 uS    Command: SYST:ERR?
+  Debug -  15.285448 s      7.7 mS    Response: -222,"Data out of range; frequency;value clipped to lower limit."
+   Info -  15.285517 s     69.1 uS    Returned: ret=ErrorQueryResult{Code:-222, Message:"Data out of range; frequency;value clipped to lower limit."}
+   Info -  15.286114 s    597.5 uS  IviDriverUtility.ErrorQuery()
+  Debug -  15.286117 s      2.8 uS    Command: SYST:ERR?
+  Debug -  15.286992 s    875.4 uS    Response: +0,"No error"
+   Info -  15.287023 s     30.3 uS    Returned: ret=ErrorQueryResult{Code:0, Message:"No error"}
+   Info -  15.287811 s    787.9 uS  SystemTracing.GetFileName()
+   Info -  15.287822 s     11.6 uS    Returned: value=Kt33000_LogOutput.txt
+   Info -  15.288941 s      1.1 mS  --- Kt33000.Close() ---
+   Info -  15.291163 s      2.2 mS  2022-11-23 14_12_50 - flush request
+
+  Level     TimeStamp    DeltaTime    Message
+   Info -   0.000000 s        0 nS  Kt33000(USB0::0x0957::0x0407::MY44016868::0::INSTR, true, true, QueryInstrStatus=true, Simulate=false, Trace=true)
+  Debug -   0.070247 s     70.2 mS    Command: *IDN?
+  Debug -   0.073067 s      2.8 mS    Response: Agilent Technologies,33220A,MY44016868,2.00-2.00-22-2
+  Debug -   0.073099 s     32.3 uS    Command: *RST;*OPC?
+  Debug -   0.179137 s    106.0 mS    Response: 1
+  Debug -   0.179150 s     12.9 uS    Command: *CLS
+   Info -   0.179529 s    379.6 uS  IviDriverIdentity.GetInstrumentModel()
+   Info -   0.179536 s      7.0 uS    Returned: value=33220A
+   Info -   0.185057 s      5.5 mS  IviDriverIdentity.GetInstrumentModel()
+   Info -   0.185077 s     19.5 uS    Returned: value=33220A
+   Info -   0.185471 s    394.8 uS  IviDriverOperation.GetIOResourceDescriptor()
+   Info -   0.185488 s     16.3 uS    Returned: value=USB0::0x0957::0x0407::MY44016868::0::INSTR
+   Info -   0.185832 s    344.4 uS  IviDriverOperation.GetDriverSetup()
+   Info -   0.185845 s     13.0 uS    Returned: value=QueryInstrStatus=true, Simulate=false, Trace=true
+   Info -   0.186686 s    840.5 uS  StatusStandardEvent.SetEnableRegister(value=OperationComplete)
+  Debug -   0.186722 s     36.2 uS    Command: *ESE 1
+  Debug -   0.186872 s    149.8 uS    Command: *ESR?
+  Debug -   0.187710 s    838.0 uS    Response: +0
+   Info -   0.187784 s     74.7 uS  Status.SetServiceRequestEnableRegister(value=StandardEventSummary)
+  Debug -   0.187796 s     11.7 uS    Command: *SRE 32
+  Debug -   0.187875 s     79.3 uS    Command: *ESR?
+  Debug -   0.188718 s    842.9 uS    Response: +0
+   Info -   0.188853 s    134.5 uS  Status.Clear()
+  Debug -   0.188873 s     20.5 uS    Command: *CLS
+  Debug -   0.188993 s    119.9 uS    Command: *ESR?
+  Debug -   0.189875 s    881.4 uS    Response: +0
+   Info -   0.190311 s    436.0 uS  System.WriteString(data=*OPC)
+  Debug -   0.190314 s      3.2 uS    Command: *OPC
+   Info -   0.241390 s     51.1 mS  Status.SerialPoll()
+   Info -   0.241562 s    172.2 uS    Returned: ret=StandardEventSummary|RequestServiceSummary
+   Info -   0.241581 s     18.5 uS  IviDriverOperation.GetSimulate()
+   Info -   0.241583 s      2.1 uS    Returned: value=False
+   Info -   0.242228 s    644.9 uS  StatusStandardEvent.ReadEventRegister()
+  Debug -   0.242251 s     23.7 uS    Command: *ESR?
+  Debug -   0.242902 s    650.8 uS    Response: +1
+  Debug -   0.242921 s     18.7 uS    Command: *ESR?
+  Debug -   0.243534 s    613.3 uS    Response: +0
+   Info -   0.243546 s     12.2 uS    Returned: ret=OperationComplete
+   Info -   0.244262 s    716.0 uS  Kt33000StatusImpl::GetServiceRequestEvent()
+   Info -   0.244266 s      3.7 uS    Returned: KtEventT<Keysight::Kt33000::ServiceRequestEventArgs>
+   Info -   0.244292 s     25.6 uS  Status.Clear()
+  Debug -   0.244306 s     14.0 uS    Command: *CLS
+  Debug -   0.244443 s    137.4 uS    Command: *ESR?
+  Debug -   0.245229 s    786.2 uS    Response: +0
+   Info -   0.245257 s     28.1 uS  Status.EnableServiceRequestEvents()
+   Info -   0.245369 s    112.0 uS  System.WriteString(data=*OPC)
+  Debug -   0.245370 s      1.0 uS    Command: *OPC
+   Info -   0.246452 s      1.1 mS  System.ClearIO()
+   Info -   0.313666 s     67.2 mS  StatusStandardEvent.ReadEventRegister()
+  Debug -   0.313684 s     18.1 uS    Command: *ESR?
+  Debug -   0.315946 s      2.3 mS    Response: +1
+  Debug -   0.315957 s     11.0 uS    Command: *ESR?
+  Debug -   0.316553 s    596.5 uS    Response: +0
+   Info -   0.316579 s     25.7 uS    Returned: ret=OperationComplete
+   Info -   0.747570 s    431.0 mS  System.WriteString(data=FREQuency 42069)
+  Debug -   0.747573 s      3.1 uS    Command: FREQuency 42069
+   Info -   2.748971 s    2.001 s  System.WriteString(data=FREQuency 69696)
+  Debug -   2.748975 s      3.7 uS    Command: FREQuency 69696
+   Info -   2.749232 s    257.7 uS  System.WriteString(data=FREQuency -500)
+  Debug -   2.749234 s      1.4 uS    Command: FREQuency -500
+   Info -   3.850011 s    1.101 s  System.WriteString(data=FREQuency 500)
+  Debug -   3.850016 s      4.9 uS    Command: FREQuency 500
+   Info -   4.901669 s    1.052 s  System.WriteString(data=FREQuency 1500)
+  Debug -   4.901673 s      3.6 uS    Command: FREQuency 1500
+   Info -   5.904350 s    1.003 s  System.WriteString(data=FREQuency 2500)
+  Debug -   5.904356 s      6.7 uS    Command: FREQuency 2500
+   Info -   6.857456 s    953.1 mS  System.WriteString(data=FREQuency 3500)
+  Debug -   6.857459 s      3.7 uS    Command: FREQuency 3500
+   Info -   7.760060 s    902.6 mS  System.WriteString(data=FREQuency 4500)
+  Debug -   7.760064 s      3.6 uS    Command: FREQuency 4500
+   Info -   8.612092 s    852.0 mS  System.WriteString(data=FREQuency 5500)
+  Debug -   8.612095 s      3.5 uS    Command: FREQuency 5500
+   Info -   9.412151 s    800.1 mS  System.WriteString(data=FREQuency 6500)
+  Debug -   9.412155 s      3.7 uS    Command: FREQuency 6500
+   Info -  10.163176 s    751.0 mS  System.WriteString(data=FREQuency 7500)
+  Debug -  10.163180 s      4.2 uS    Command: FREQuency 7500
+   Info -  10.864120 s    700.9 mS  System.WriteString(data=FREQuency 8500)
+  Debug -  10.864124 s      3.4 uS    Command: FREQuency 8500
+   Info -  11.516128 s    652.0 mS  System.WriteString(data=FREQuency 9500)
+  Debug -  11.516132 s      3.4 uS    Command: FREQuency 9500
+   Info -  12.119113 s    603.0 mS  System.WriteString(data=FREQuency 10500)
+  Debug -  12.119118 s      4.9 uS    Command: FREQuency 10500
+   Info -  12.669173 s    550.1 mS  System.WriteString(data=FREQuency 11500)
+  Debug -  12.669177 s      4.2 uS    Command: FREQuency 11500
+   Info -  13.170161 s    501.0 mS  System.WriteString(data=FREQuency 12500)
+  Debug -  13.170165 s      3.6 uS    Command: FREQuency 12500
+   Info -  13.622797 s    452.6 mS  System.WriteString(data=FREQuency 13500)
+  Debug -  13.622801 s      3.8 uS    Command: FREQuency 13500
+   Info -  14.022779 s    400.0 mS  System.WriteString(data=FREQuency 14500)
+  Debug -  14.022784 s      4.8 uS    Command: FREQuency 14500
+   Info -  14.375732 s    352.9 mS  System.WriteString(data=FREQuency 15500)
+  Debug -  14.375735 s      3.5 uS    Command: FREQuency 15500
+   Info -  14.678722 s    303.0 mS  System.WriteString(data=FREQuency 16500)
+  Debug -  14.678725 s      3.8 uS    Command: FREQuency 16500
+   Info -  14.826981 s    148.3 mS  SystemTracing.GetFileName()
+   Info -  14.826994 s     13.7 uS    Returned: value=Kt33000_LogOutput.txt
+   Info -  14.827993 s    998.8 uS  --- Kt33000.Close() ---
+   Info -  14.830059 s      2.1 mS  2022-11-23 14_13_41 - flush request
+
+  Level     TimeStamp    DeltaTime    Message
+   Info -   0.000000 s        0 nS  Kt33000(USB0::0x0957::0x0407::MY44016868::0::INSTR, true, true, QueryInstrStatus=true, Simulate=false, Trace=true)
+  Debug -   0.070630 s     70.6 mS    Command: *IDN?
+  Debug -   0.073352 s      2.7 mS    Response: Agilent Technologies,33220A,MY44016868,2.00-2.00-22-2
+  Debug -   0.073365 s     13.3 uS    Command: *RST;*OPC?
+  Debug -   0.179374 s    106.0 mS    Response: 1
+  Debug -   0.179387 s     13.2 uS    Command: *CLS
+   Info -   0.179875 s    487.3 uS  IviDriverIdentity.GetInstrumentModel()
+   Info -   0.179881 s      6.7 uS    Returned: value=33220A
+   Info -   0.180629 s    747.3 uS  IviDriverIdentity.GetInstrumentModel()
+   Info -   0.180639 s     10.6 uS    Returned: value=33220A
+   Info -   0.180959 s    319.5 uS  IviDriverOperation.GetIOResourceDescriptor()
+   Info -   0.180971 s     11.9 uS    Returned: value=USB0::0x0957::0x0407::MY44016868::0::INSTR
+   Info -   0.181324 s    353.2 uS  IviDriverOperation.GetDriverSetup()
+   Info -   0.181334 s      9.9 uS    Returned: value=QueryInstrStatus=true, Simulate=false, Trace=true
+   Info -   0.182110 s    775.8 uS  StatusStandardEvent.SetEnableRegister(value=OperationComplete)
+  Debug -   0.182134 s     24.0 uS    Command: *ESE 1
+  Debug -   0.182292 s    158.0 uS    Command: *ESR?
+  Debug -   0.187936 s      5.6 mS    Response: +0
+   Info -   0.188033 s     97.5 uS  Status.SetServiceRequestEnableRegister(value=StandardEventSummary)
+  Debug -   0.188063 s     29.2 uS    Command: *SRE 32
+  Debug -   0.188182 s    119.1 uS    Command: *ESR?
+  Debug -   0.188965 s    783.3 uS    Response: +0
+   Info -   0.188993 s     28.5 uS  Status.Clear()
+  Debug -   0.189003 s      9.1 uS    Command: *CLS
+  Debug -   0.189072 s     69.5 uS    Command: *ESR?
+  Debug -   0.189835 s    763.0 uS    Response: +0
+   Info -   0.190151 s    315.8 uS  System.WriteString(data=*OPC)
+  Debug -   0.190152 s      1.4 uS    Command: *OPC
+   Info -   0.240612 s     50.5 mS  Status.SerialPoll()
+   Info -   0.240715 s    102.8 uS    Returned: ret=StandardEventSummary|RequestServiceSummary
+   Info -   0.240740 s     24.7 uS  IviDriverOperation.GetSimulate()
+   Info -   0.240742 s      2.1 uS    Returned: value=False
+   Info -   0.241355 s    612.8 uS  StatusStandardEvent.ReadEventRegister()
+  Debug -   0.241388 s     33.6 uS    Command: *ESR?
+  Debug -   0.242052 s    663.5 uS    Response: +1
+  Debug -   0.242069 s     17.2 uS    Command: *ESR?
+  Debug -   0.242745 s    675.7 uS    Response: +0
+   Info -   0.242759 s     14.5 uS    Returned: ret=OperationComplete
+   Info -   0.243756 s    996.6 uS  Kt33000StatusImpl::GetServiceRequestEvent()
+   Info -   0.243763 s      7.4 uS    Returned: KtEventT<Keysight::Kt33000::ServiceRequestEventArgs>
+   Info -   0.243796 s     32.5 uS  Status.Clear()
+  Debug -   0.243821 s     25.3 uS    Command: *CLS
+  Debug -   0.243971 s    149.8 uS    Command: *ESR?
+  Debug -   0.244770 s    798.9 uS    Response: +0
+   Info -   0.244875 s    105.0 uS  Status.EnableServiceRequestEvents()
+   Info -   0.245092 s    217.3 uS  System.WriteString(data=*OPC)
+  Debug -   0.245093 s      1.5 uS    Command: *OPC
+   Info -   0.246890 s      1.8 mS  System.ClearIO()
+   Info -   0.312796 s     65.9 mS  StatusStandardEvent.ReadEventRegister()
+  Debug -   0.312814 s     18.0 uS    Command: *ESR?
+  Debug -   0.315175 s      2.4 mS    Response: +1
+  Debug -   0.315202 s     27.5 uS    Command: *ESR?
+  Debug -   0.315799 s    596.9 uS    Response: +0
+   Info -   0.315837 s     38.3 uS    Returned: ret=OperationComplete
+   Info -   0.745664 s    429.8 mS  System.WriteString(data=FREQuency 42069)
+  Debug -   0.745667 s      2.8 uS    Command: FREQuency 42069
+   Info -   2.746784 s    2.001 s  System.WriteString(data=FREQuency 69696)
+  Debug -   2.746788 s      4.4 uS    Command: FREQuency 69696
+   Info -   2.747003 s    214.9 uS  System.WriteString(data=FREQuency -500)
+  Debug -   2.747005 s      1.2 uS    Command: FREQuency -500
+   Info -   3.848032 s    1.101 s  System.WriteString(data=FREQuency 500)
+  Debug -   3.848035 s      3.3 uS    Command: FREQuency 500
+   Info -   4.898165 s    1.050 s  System.WriteString(data=FREQuency 1500)
+  Debug -   4.898169 s      4.0 uS    Command: FREQuency 1500
+   Info -   5.898448 s    1.000 s  System.WriteString(data=FREQuency 2500)
+  Debug -   5.898453 s      4.6 uS    Command: FREQuency 2500
+   Info -   6.850821 s    952.4 mS  System.WriteString(data=FREQuency 3500)
+  Debug -   6.850825 s      3.6 uS    Command: FREQuency 3500
+   Info -   7.754024 s    903.2 mS  System.WriteString(data=FREQuency 4500)
+  Debug -   7.754028 s      3.2 uS    Command: FREQuency 4500
+   Info -   8.607246 s    853.2 mS  System.WriteString(data=FREQuency 5500)
+  Debug -   8.607251 s      5.3 uS    Command: FREQuency 5500
+   Info -   9.408666 s    801.4 mS  System.WriteString(data=FREQuency 6500)
+  Debug -   9.408671 s      5.1 uS    Command: FREQuency 6500
+   Info -  10.160409 s    751.7 mS  System.WriteString(data=FREQuency 7500)
+  Debug -  10.160413 s      3.9 uS    Command: FREQuency 7500
+   Info -  10.861784 s    701.4 mS  System.WriteString(data=FREQuency 8500)
+  Debug -  10.861787 s      3.4 uS    Command: FREQuency 8500
+   Info -  11.514712 s    652.9 mS  System.WriteString(data=FREQuency 9500)
+  Debug -  11.514729 s     17.6 uS    Command: FREQuency 9500
+   Info -  12.117392 s    602.7 mS  System.WriteString(data=FREQuency 10500)
+  Debug -  12.117396 s      4.5 uS    Command: FREQuency 10500
+   Info -  12.670045 s    552.6 mS  System.WriteString(data=FREQuency 11500)
+  Debug -  12.670049 s      4.4 uS    Command: FREQuency 11500
+   Info -  13.171986 s    501.9 mS  System.WriteString(data=FREQuency 12500)
+  Debug -  13.171990 s      3.5 uS    Command: FREQuency 12500
+   Info -  13.623725 s    451.7 mS  System.WriteString(data=FREQuency 13500)
+  Debug -  13.623732 s      7.2 uS    Command: FREQuency 13500
+   Info -  14.024433 s    400.7 mS  System.WriteString(data=FREQuency 14500)
+  Debug -  14.024437 s      3.8 uS    Command: FREQuency 14500
+   Info -  14.376198 s    351.8 mS  System.WriteString(data=FREQuency 15500)
+  Debug -  14.376202 s      3.4 uS    Command: FREQuency 15500
+   Info -  14.678790 s    302.6 mS  System.WriteString(data=FREQuency 16500)
+  Debug -  14.678808 s     18.8 uS    Command: FREQuency 16500
+   Info -  14.929825 s    251.0 mS  System.WriteString(data=FREQuency 17500)
+  Debug -  14.929829 s      3.4 uS    Command: FREQuency 17500
+   Info -  15.131038 s    201.2 mS  System.WriteString(data=FREQuency 18500)
+  Debug -  15.131042 s      4.1 uS    Command: FREQuency 18500
+   Info -  15.282197 s    151.2 mS  IviDriverUtility.ErrorQuery()
+  Debug -  15.282200 s      3.6 uS    Command: SYST:ERR?
+  Debug -  15.289886 s      7.7 mS    Response: -222,"Data out of range; frequency;value clipped to lower limit."
+   Info -  15.289971 s     84.7 uS    Returned: ret=ErrorQueryResult{Code:-222, Message:"Data out of range; frequency;value clipped to lower limit."}
+   Info -  15.290612 s    641.2 uS  IviDriverUtility.ErrorQuery()
+  Debug -  15.290618 s      5.5 uS    Command: SYST:ERR?
+  Debug -  15.291587 s    969.7 uS    Response: +0,"No error"
+   Info -  15.291615 s     27.9 uS    Returned: ret=ErrorQueryResult{Code:0, Message:"No error"}
+   Info -  15.292425 s    809.2 uS  SystemTracing.GetFileName()
+   Info -  15.292474 s     49.1 uS    Returned: value=Kt33000_LogOutput.txt
+   Info -  15.293825 s      1.4 mS  --- Kt33000.Close() ---
+   Info -  15.296102 s      2.3 mS  2022-11-23 14_14_28 - flush request
+
+  Level     TimeStamp    DeltaTime    Message
+   Info -   0.000000 s        0 nS  Kt33000(USB0::0x0957::0x0407::MY44016868::0::INSTR, true, true, QueryInstrStatus=true, Simulate=false, Trace=true)
+  Debug -   0.067125 s     67.1 mS    Command: *IDN?
+  Debug -   0.070108 s      3.0 mS    Response: Agilent Technologies,33220A,MY44016868,2.00-2.00-22-2
+  Debug -   0.070220 s    112.2 uS    Command: *RST;*OPC?
+  Debug -   0.176229 s    106.0 mS    Response: 1
+  Debug -   0.176243 s     13.8 uS    Command: *CLS
+   Info -   0.176611 s    368.3 uS  IviDriverIdentity.GetInstrumentModel()
+   Info -   0.176619 s      7.6 uS    Returned: value=33220A
+   Info -   0.177610 s    991.1 uS  IviDriverIdentity.GetInstrumentModel()
+   Info -   0.177623 s     12.9 uS    Returned: value=33220A
+   Info -   0.178049 s    426.3 uS  IviDriverOperation.GetIOResourceDescriptor()
+   Info -   0.178061 s     11.6 uS    Returned: value=USB0::0x0957::0x0407::MY44016868::0::INSTR
+   Info -   0.178384 s    323.0 uS  IviDriverOperation.GetDriverSetup()
+   Info -   0.178394 s     10.6 uS    Returned: value=QueryInstrStatus=true, Simulate=false, Trace=true
+   Info -   0.179241 s    847.0 uS  StatusStandardEvent.SetEnableRegister(value=OperationComplete)
+  Debug -   0.179302 s     61.1 uS    Command: *ESE 1
+  Debug -   0.179471 s    168.1 uS    Command: *ESR?
+  Debug -   0.180352 s    881.9 uS    Response: +0
+   Info -   0.180435 s     82.9 uS  Status.SetServiceRequestEnableRegister(value=StandardEventSummary)
+  Debug -   0.180448 s     12.3 uS    Command: *SRE 32
+  Debug -   0.180535 s     87.1 uS    Command: *ESR?
+  Debug -   0.181370 s    834.8 uS    Response: +0
+   Info -   0.181416 s     46.0 uS  Status.Clear()
+  Debug -   0.181436 s     20.9 uS    Command: *CLS
+  Debug -   0.181561 s    125.0 uS    Command: *ESR?
+  Debug -   0.182321 s    759.6 uS    Response: +0
+   Info -   0.182722 s    400.5 uS  System.WriteString(data=*OPC)
+  Debug -   0.182725 s      3.5 uS    Command: *OPC
+   Info -   0.233278 s     50.6 mS  Status.SerialPoll()
+   Info -   0.233481 s    203.0 uS    Returned: ret=StandardEventSummary|RequestServiceSummary
+   Info -   0.233503 s     21.6 uS  IviDriverOperation.GetSimulate()
+   Info -   0.233523 s     20.2 uS    Returned: value=False
+   Info -   0.234411 s    888.3 uS  StatusStandardEvent.ReadEventRegister()
+  Debug -   0.234436 s     24.3 uS    Command: *ESR?
+  Debug -   0.235126 s    690.2 uS    Response: +1
+  Debug -   0.235151 s     25.2 uS    Command: *ESR?
+  Debug -   0.235755 s    604.1 uS    Response: +0
+   Info -   0.235771 s     16.3 uS    Returned: ret=OperationComplete
+   Info -   0.236723 s    952.0 uS  Kt33000StatusImpl::GetServiceRequestEvent()
+   Info -   0.236731 s      7.4 uS    Returned: KtEventT<Keysight::Kt33000::ServiceRequestEventArgs>
+   Info -   0.236773 s     42.6 uS  Status.Clear()
+  Debug -   0.236799 s     25.1 uS    Command: *CLS
+  Debug -   0.237002 s    203.7 uS    Command: *ESR?
+  Debug -   0.237824 s    822.2 uS    Response: +0
+   Info -   0.237890 s     65.7 uS  Status.EnableServiceRequestEvents()
+   Info -   0.238120 s    230.2 uS  System.WriteString(data=*OPC)
+  Debug -   0.238122 s      1.9 uS    Command: *OPC
+   Info -   0.239976 s      1.9 mS  System.ClearIO()
+   Info -   0.305435 s     65.5 mS  StatusStandardEvent.ReadEventRegister()
+  Debug -   0.305458 s     22.6 uS    Command: *ESR?
+  Debug -   0.308794 s      3.3 mS    Response: +1
+  Debug -   0.308823 s     29.3 uS    Command: *ESR?
+  Debug -   0.309424 s    600.8 uS    Response: +0
+   Info -   0.309435 s     10.9 uS    Returned: ret=OperationComplete
+   Info -   0.739419 s    430.0 mS  System.WriteString(data=FREQuency 42069)
+  Debug -   0.739423 s      3.4 uS    Command: FREQuency 42069
+   Info -   2.741084 s    2.002 s  System.WriteString(data=FREQuency 69696)
+  Debug -   2.741089 s      5.3 uS    Command: FREQuency 69696
+   Info -   2.741333 s    243.3 uS  System.WriteString(data=FREQuency -500)
+  Debug -   2.741334 s      1.2 uS    Command: FREQuency -500
+   Info -   3.842060 s    1.101 s  System.WriteString(data=FREQuency 500)
+  Debug -   3.842077 s     17.0 uS    Command: FREQuency 500
+   Info -   4.892560 s    1.050 s  System.WriteString(data=FREQuency 1500)
+  Debug -   4.892563 s      3.4 uS    Command: FREQuency 1500
+   Info -   5.894637 s    1.002 s  System.WriteString(data=FREQuency 2500)
+  Debug -   5.894641 s      3.8 uS    Command: FREQuency 2500
+   Info -   6.847529 s    952.9 mS  System.WriteString(data=FREQuency 3500)
+  Debug -   6.847534 s      5.0 uS    Command: FREQuency 3500
+   Info -   7.750392 s    902.9 mS  System.WriteString(data=FREQuency 4500)
+  Debug -   7.750396 s      3.4 uS    Command: FREQuency 4500
+   Info -   8.603051 s    852.7 mS  System.WriteString(data=FREQuency 5500)
+  Debug -   8.603055 s      4.6 uS    Command: FREQuency 5500
+   Info -   9.405550 s    802.5 mS  System.WriteString(data=FREQuency 6500)
+  Debug -   9.405554 s      3.5 uS    Command: FREQuency 6500
+   Info -  10.155729 s    750.2 mS  System.WriteString(data=FREQuency 7500)
+  Debug -  10.155748 s     18.6 uS    Command: FREQuency 7500
+   Info -  10.858571 s    702.8 mS  System.WriteString(data=FREQuency 8500)
+  Debug -  10.858576 s      5.0 uS    Command: FREQuency 8500
+   Info -  11.511083 s    652.5 mS  System.WriteString(data=FREQuency 9500)
+  Debug -  11.511087 s      3.3 uS    Command: FREQuency 9500
+   Info -  12.113012 s    601.9 mS  System.WriteString(data=FREQuency 10500)
+  Debug -  12.113016 s      3.9 uS    Command: FREQuency 10500
+   Info -  12.665221 s    552.2 mS  System.WriteString(data=FREQuency 11500)
+  Debug -  12.665227 s      6.3 uS    Command: FREQuency 11500
+   Info -  13.165961 s    500.7 mS  System.WriteString(data=FREQuency 12500)
+  Debug -  13.165964 s      3.4 uS    Command: FREQuency 12500
+   Info -  13.618376 s    452.4 mS  System.WriteString(data=FREQuency 13500)
+  Debug -  13.618380 s      3.5 uS    Command: FREQuency 13500
+   Info -  14.019950 s    401.6 mS  System.WriteString(data=FREQuency 14500)
+  Debug -  14.019953 s      3.8 uS    Command: FREQuency 14500
+   Info -  14.372246 s    352.3 mS  System.WriteString(data=FREQuency 15500)
+  Debug -  14.372250 s      4.7 uS    Command: FREQuency 15500
+   Info -  14.676004 s    303.8 mS  System.WriteString(data=FREQuency 16500)
+  Debug -  14.676008 s      3.9 uS    Command: FREQuency 16500
+   Info -  14.926043 s    250.0 mS  System.WriteString(data=FREQuency 17500)
+  Debug -  14.926047 s      4.0 uS    Command: FREQuency 17500
+   Info -  15.127084 s    201.0 mS  System.WriteString(data=FREQuency 18500)
+  Debug -  15.127087 s      3.2 uS    Command: FREQuency 18500
+   Info -  15.278956 s    151.9 mS  System.WriteString(data=FREQuency 19500)
+  Debug -  15.278959 s      3.7 uS    Command: FREQuency 19500
+   Info -  15.380909 s    102.0 mS  System.WriteString(data=FREQuency 20500)
+  Debug -  15.380913 s      3.8 uS    Command: FREQuency 20500
+   Info -  15.433226 s     52.3 mS  IviDriverUtility.ErrorQuery()
+  Debug -  15.433235 s      9.2 uS    Command: SYST:ERR?
+  Debug -  15.434958 s      1.7 mS    Response: -222,"Data out of range; frequency;value clipped to lower limit."
+   Info -  15.435054 s     96.6 uS    Returned: ret=ErrorQueryResult{Code:-222, Message:"Data out of range; frequency;value clipped to lower limit."}
+   Info -  15.435772 s    717.3 uS  IviDriverUtility.ErrorQuery()
+  Debug -  15.435776 s      4.6 uS    Command: SYST:ERR?
+  Debug -  15.436631 s    854.8 uS    Response: +0,"No error"
+   Info -  15.436655 s     24.4 uS    Returned: ret=ErrorQueryResult{Code:0, Message:"No error"}
+   Info -  15.437163 s    507.6 uS  SystemTracing.GetFileName()
+   Info -  15.437173 s     10.2 uS    Returned: value=Kt33000_LogOutput.txt
+   Info -  15.438455 s      1.3 mS  --- Kt33000.Close() ---
+   Info -  15.440984 s      2.5 mS  2022-11-23 14_14_58 - flush request
+
+  Level     TimeStamp    DeltaTime    Message
+   Info -   0.000000 s        0 nS  Kt33000(USB0::0x0957::0x0407::MY44016868::0::INSTR, true, true, QueryInstrStatus=true, Simulate=false, Trace=true)
+  Error -   0.046250 s     46.3 mS  VI_ERROR_NCIC: Not the controller-in-charge
+   Info -   0.048169 s      1.9 mS  --- Kt33000.Close() ---
+   Info -   0.048669 s    499.5 uS  2022-11-23 14_37_09 - flush request

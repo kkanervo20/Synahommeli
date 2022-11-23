@@ -121,11 +121,12 @@ def main():
 
         time.sleep(2)
 
-        driver.system.write_string("FREQuency 69696.969") #NAMA ON TARKEITA!!!!!
+        driver.system.write_string("FREQuency 69696") #NAMA ON TARKEITA!!!!!
 
-        for i in range(20):
-            driver.system.write_string("FREQuency %d" % (i*1000))
-            time.sleep(2.1-i*.1)
+        for i in range(22):
+            driver.system.write_string("FREQuency %d" % (i*1000 - 500))
+            time.sleep(1.1-i*0.05)
+            print("%f" % (1.1-i*0.05))
 
 
         # Check instrument for errors

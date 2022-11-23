@@ -6,3 +6,4 @@ http://ecelabs.njit.edu/student_resources/33220_user_guide.pdf
 https://pyvisa.readthedocs.io/en/latest/api/visalibrarybase.html
 https://pyvisa.readthedocs.io/en/stable/introduction/shell.html
 https://courses.ideate.cmu.edu/16-375/f2021/text/code/midi-examples.html
+https://pythonhosted.org/audiolazy/lazy_midi.html
