@@ -117,11 +117,15 @@ def main():
 
         # End configure and test SRQs
 
-        driver.system.write_string("FREQuency 25000")
+        driver.system.write_string("FREQuency 42069")
 
-        time.sleep(5)
+        time.sleep(2)
 
-        driver.system.write_string("FREQuency 69000") #NAMA ON TARKEITA!!!!!
+        driver.system.write_string("FREQuency 69696.969") #NAMA ON TARKEITA!!!!!
+
+        for i in range(20):
+            driver.system.write_string("FREQuency %d" % (i*1000))
+            time.sleep(2.1-i*.1)
 
 
         # Check instrument for errors

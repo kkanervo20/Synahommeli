@@ -324,3 +324,203 @@
    Info -   5.790300 s      5.6 uS    Returned: value=Kt33000_LogOutput.txt
    Info -   5.791452 s      1.2 mS  --- Kt33000.Close() ---
    Info -   5.793054 s      1.6 mS  2022-11-09 11_48_35 - flush request
+
+  Level     TimeStamp    DeltaTime    Message
+   Info -   0.000000 s        0 nS  Kt33000(USB0::0x0957::0x0407::MY44016868::0::INSTR, true, true, QueryInstrStatus=true, Simulate=false, Trace=true)
+  Debug -   0.191994 s    192.0 mS    Command: *IDN?
+  Debug -   0.194782 s      2.8 mS    Response: Agilent Technologies,33220A,MY44016868,2.00-2.00-22-2
+  Debug -   0.194804 s     22.3 uS    Command: *RST;*OPC?
+  Debug -   0.326009 s    131.2 mS    Response: 1
+  Debug -   0.326022 s     13.4 uS    Command: *CLS
+   Info -   0.332094 s      6.1 mS  IviDriverIdentity.GetInstrumentModel()
+   Info -   0.332103 s      8.9 uS    Returned: value=33220A
+   Info -   0.333041 s    937.5 uS  IviDriverIdentity.GetInstrumentModel()
+   Info -   0.333052 s     11.5 uS    Returned: value=33220A
+   Info -   0.333379 s    326.4 uS  IviDriverOperation.GetIOResourceDescriptor()
+   Info -   0.333393 s     14.4 uS    Returned: value=USB0::0x0957::0x0407::MY44016868::0::INSTR
+   Info -   0.333735 s    342.2 uS  IviDriverOperation.GetDriverSetup()
+   Info -   0.333746 s     10.2 uS    Returned: value=QueryInstrStatus=true, Simulate=false, Trace=true
+   Info -   0.334547 s    801.1 uS  StatusStandardEvent.SetEnableRegister(value=OperationComplete)
+  Debug -   0.334579 s     31.9 uS    Command: *ESE 1
+  Debug -   0.334730 s    151.3 uS    Command: *ESR?
+  Debug -   0.335583 s    853.1 uS    Response: +0
+   Info -   0.335653 s     70.2 uS  Status.SetServiceRequestEnableRegister(value=StandardEventSummary)
+  Debug -   0.335666 s     12.9 uS    Command: *SRE 32
+  Debug -   0.335751 s     85.3 uS    Command: *ESR?
+  Debug -   0.336596 s    845.1 uS    Response: +0
+   Info -   0.336621 s     24.1 uS  Status.Clear()
+  Debug -   0.336629 s      8.3 uS    Command: *CLS
+  Debug -   0.336709 s     80.7 uS    Command: *ESR?
+  Debug -   0.337414 s    704.7 uS    Response: +0
+   Info -   0.337848 s    433.9 uS  System.WriteString(data=*OPC)
+  Debug -   0.337852 s      3.4 uS    Command: *OPC
+   Info -   0.390012 s     52.2 mS  Status.SerialPoll()
+   Info -   0.390131 s    119.7 uS    Returned: ret=StandardEventSummary|RequestServiceSummary
+   Info -   0.390149 s     17.5 uS  IviDriverOperation.GetSimulate()
+   Info -   0.390151 s      2.3 uS    Returned: value=False
+   Info -   0.390789 s    638.3 uS  StatusStandardEvent.ReadEventRegister()
+  Debug -   0.390805 s     15.8 uS    Command: *ESR?
+  Debug -   0.391454 s    648.8 uS    Response: +1
+  Debug -   0.391472 s     17.8 uS    Command: *ESR?
+  Debug -   0.392059 s    587.2 uS    Response: +0
+   Info -   0.392070 s     11.3 uS    Returned: ret=OperationComplete
+   Info -   0.392769 s    698.4 uS  Kt33000StatusImpl::GetServiceRequestEvent()
+   Info -   0.392772 s      3.6 uS    Returned: KtEventT<Keysight::Kt33000::ServiceRequestEventArgs>
+   Info -   0.392825 s     52.4 uS  Status.Clear()
+  Debug -   0.392839 s     14.6 uS    Command: *CLS
+  Debug -   0.393050 s    210.6 uS    Command: *ESR?
+  Debug -   0.393863 s    813.1 uS    Response: +0
+   Info -   0.393914 s     51.1 uS  Status.EnableServiceRequestEvents()
+   Info -   0.394101 s    187.0 uS  System.WriteString(data=*OPC)
+  Debug -   0.394102 s      1.2 uS    Command: *OPC
+   Info -   0.396539 s      2.4 mS  System.ClearIO()
+   Info -   0.460218 s     63.7 mS  StatusStandardEvent.ReadEventRegister()
+  Debug -   0.460254 s     36.6 uS    Command: *ESR?
+  Debug -   0.462708 s      2.5 mS    Response: +1
+  Debug -   0.462730 s     21.8 uS    Command: *ESR?
+  Debug -   0.463322 s    592.7 uS    Response: +0
+   Info -   0.463349 s     27.0 uS    Returned: ret=OperationComplete
+   Info -   0.898212 s    434.9 mS  System.WriteString(data=FREQuency 25000)
+  Debug -   0.898215 s      3.0 uS    Command: FREQuency 25000
+   Info -   5.900004 s    5.002 s  System.WriteString(data=FREQuency 69000)
+  Debug -   5.900008 s      3.5 uS    Command: FREQuency 69000
+   Info -   5.900348 s    340.8 uS  IviDriverUtility.ErrorQuery()
+  Debug -   5.900351 s      2.3 uS    Command: SYST:ERR?
+  Debug -   5.901911 s      1.6 mS    Response: +0,"No error"
+   Info -   5.902001 s     89.7 uS    Returned: ret=ErrorQueryResult{Code:0, Message:"No error"}
+   Info -   5.902535 s    533.8 uS  SystemTracing.GetFileName()
+   Info -   5.902542 s      7.7 uS    Returned: value=Kt33000_LogOutput.txt
+   Info -   5.903670 s      1.1 mS  --- Kt33000.Close() ---
+   Info -   5.906652 s      3.0 mS  2022-11-23 14_01_34 - flush request
+
+  Level     TimeStamp    DeltaTime    Message
+   Info -   0.000000 s        0 nS  Kt33000(USB0::0x0957::0x0407::MY44016868::0::INSTR, true, true, QueryInstrStatus=true, Simulate=false, Trace=true)
+  Debug -   0.070656 s     70.7 mS    Command: *IDN?
+  Debug -   0.074470 s      3.8 mS    Response: Agilent Technologies,33220A,MY44016868,2.00-2.00-22-2
+  Debug -   0.074486 s     16.0 uS    Command: *RST;*OPC?
+  Debug -   0.180719 s    106.2 mS    Response: 1
+  Debug -   0.180732 s     12.8 uS    Command: *CLS
+   Info -   0.181154 s    421.8 uS  IviDriverIdentity.GetInstrumentModel()
+   Info -   0.181161 s      6.9 uS    Returned: value=33220A
+   Info -   0.181945 s    783.9 uS  IviDriverIdentity.GetInstrumentModel()
+   Info -   0.181955 s     10.3 uS    Returned: value=33220A
+   Info -   0.182277 s    321.6 uS  IviDriverOperation.GetIOResourceDescriptor()
+   Info -   0.182291 s     14.5 uS    Returned: value=USB0::0x0957::0x0407::MY44016868::0::INSTR
+   Info -   0.182625 s    333.5 uS  IviDriverOperation.GetDriverSetup()
+   Info -   0.182635 s     10.0 uS    Returned: value=QueryInstrStatus=true, Simulate=false, Trace=true
+   Info -   0.183391 s    756.8 uS  StatusStandardEvent.SetEnableRegister(value=OperationComplete)
+  Debug -   0.183416 s     24.8 uS    Command: *ESE 1
+  Debug -   0.183567 s    150.4 uS    Command: *ESR?
+  Debug -   0.184470 s    903.1 uS    Response: +0
+   Info -   0.184549 s     79.0 uS  Status.SetServiceRequestEnableRegister(value=StandardEventSummary)
+  Debug -   0.184562 s     13.0 uS    Command: *SRE 32
+  Debug -   0.184658 s     96.1 uS    Command: *ESR?
+  Debug -   0.185529 s    870.8 uS    Response: +0
+   Info -   0.185564 s     35.9 uS  Status.Clear()
+  Debug -   0.185576 s     11.3 uS    Command: *CLS
+  Debug -   0.185650 s     74.3 uS    Command: *ESR?
+  Debug -   0.186526 s    875.8 uS    Response: +0
+   Info -   0.186999 s    472.9 uS  System.WriteString(data=*OPC)
+  Debug -   0.187003 s      3.8 uS    Command: *OPC
+   Info -   0.237728 s     50.7 mS  Status.SerialPoll()
+   Info -   0.237840 s    111.4 uS    Returned: ret=StandardEventSummary|RequestServiceSummary
+   Info -   0.237860 s     19.9 uS  IviDriverOperation.GetSimulate()
+   Info -   0.237862 s      2.4 uS    Returned: value=False
+   Info -   0.238489 s    627.0 uS  StatusStandardEvent.ReadEventRegister()
+  Debug -   0.238505 s     15.6 uS    Command: *ESR?
+  Debug -   0.239158 s    653.2 uS    Response: +1
+  Debug -   0.239177 s     18.8 uS    Command: *ESR?
+  Debug -   0.239767 s    590.5 uS    Response: +0
+   Info -   0.239778 s     11.4 uS    Returned: ret=OperationComplete
+   Info -   0.240444 s    665.7 uS  Kt33000StatusImpl::GetServiceRequestEvent()
+   Info -   0.240448 s      3.8 uS    Returned: KtEventT<Keysight::Kt33000::ServiceRequestEventArgs>
+   Info -   0.240473 s     25.2 uS  Status.Clear()
+  Debug -   0.240487 s     14.0 uS    Command: *CLS
+  Debug -   0.240599 s    112.0 uS    Command: *ESR?
+  Debug -   0.241353 s    753.9 uS    Response: +0
+   Info -   0.241389 s     36.1 uS  Status.EnableServiceRequestEvents()
+   Info -   0.241484 s     94.9 uS  System.WriteString(data=*OPC)
+  Debug -   0.241485 s      800 nS    Command: *OPC
+   Info -   0.243005 s      1.5 mS  System.ClearIO()
+   Info -   0.307072 s     64.1 mS  StatusStandardEvent.ReadEventRegister()
+  Debug -   0.307090 s     17.6 uS    Command: *ESR?
+  Debug -   0.309362 s      2.3 mS    Response: +1
+  Debug -   0.309386 s     23.4 uS    Command: *ESR?
+  Debug -   0.309953 s    567.0 uS    Response: +0
+   Info -   0.309969 s     16.4 uS    Returned: ret=OperationComplete
+   Info -   0.742827 s    432.9 mS  System.WriteString(data=FREQuency 42069)
+  Debug -   0.742831 s      3.8 uS    Command: FREQuency 42069
+   Info -   5.743548 s    5.001 s  System.WriteString(data=FREQuency 69696)
+  Debug -   5.743551 s      3.4 uS    Command: FREQuency 69696
+   Info -   5.743924 s    372.2 uS  IviDriverUtility.ErrorQuery()
+  Debug -   5.743925 s      1.3 uS    Command: SYST:ERR?
+  Debug -   5.745427 s      1.5 mS    Response: +0,"No error"
+   Info -   5.745504 s     76.6 uS    Returned: ret=ErrorQueryResult{Code:0, Message:"No error"}
+   Info -   5.746020 s    516.1 uS  SystemTracing.GetFileName()
+   Info -   5.746029 s      8.5 uS    Returned: value=Kt33000_LogOutput.txt
+   Info -   5.747119 s      1.1 mS  --- Kt33000.Close() ---
+   Info -   5.748653 s      1.5 mS  2022-11-23 14_02_22 - flush request
+
+  Level     TimeStamp    DeltaTime    Message
+   Info -   0.000000 s        0 nS  Kt33000(USB0::0x0957::0x0407::MY44016868::0::INSTR, true, true, QueryInstrStatus=true, Simulate=false, Trace=true)
+  Debug -   0.070600 s     70.6 mS    Command: *IDN?
+  Debug -   0.073378 s      2.8 mS    Response: Agilent Technologies,33220A,MY44016868,2.00-2.00-22-2
+  Debug -   0.073409 s     30.6 uS    Command: *RST;*OPC?
+  Debug -   0.179510 s    106.1 mS    Response: 1
+  Debug -   0.179523 s     13.3 uS    Command: *CLS
+   Info -   0.179910 s    387.1 uS  IviDriverIdentity.GetInstrumentModel()
+   Info -   0.179917 s      7.4 uS    Returned: value=33220A
+   Info -   0.180662 s    744.1 uS  IviDriverIdentity.GetInstrumentModel()
+   Info -   0.180671 s      9.1 uS    Returned: value=33220A
+   Info -   0.180904 s    233.7 uS  IviDriverOperation.GetIOResourceDescriptor()
+   Info -   0.180910 s      6.1 uS    Returned: value=USB0::0x0957::0x0407::MY44016868::0::INSTR
+   Info -   0.181258 s    347.8 uS  IviDriverOperation.GetDriverSetup()
+   Info -   0.181269 s     11.0 uS    Returned: value=QueryInstrStatus=true, Simulate=false, Trace=true
+   Info -   0.182289 s      1.0 mS  StatusStandardEvent.SetEnableRegister(value=OperationComplete)
+  Debug -   0.182316 s     26.4 uS    Command: *ESE 1
+  Debug -   0.182485 s    169.5 uS    Command: *ESR?
+  Debug -   0.183324 s    839.2 uS    Response: +0
+   Info -   0.183398 s     73.4 uS  Status.SetServiceRequestEnableRegister(value=StandardEventSummary)
+  Debug -   0.183410 s     12.2 uS    Command: *SRE 32
+  Debug -   0.183492 s     82.4 uS    Command: *ESR?
+  Debug -   0.184382 s    890.2 uS    Response: +0
+   Info -   0.184428 s     45.9 uS  Status.Clear()
+  Debug -   0.184443 s     14.4 uS    Command: *CLS
+  Debug -   0.184543 s    100.5 uS    Command: *ESR?
+  Debug -   0.185339 s    795.5 uS    Response: +0
+   Info -   0.186235 s    896.4 uS  System.WriteString(data=*OPC)
+  Debug -   0.186240 s      4.9 uS    Command: *OPC
+   Info -   0.236616 s     50.4 mS  Status.SerialPoll()
+   Info -   0.236751 s    135.3 uS    Returned: ret=StandardEventSummary|RequestServiceSummary
+   Info -   0.236779 s     28.2 uS  IviDriverOperation.GetSimulate()
+   Info -   0.236782 s      3.2 uS    Returned: value=False
+   Info -   0.237819 s      1.0 mS  StatusStandardEvent.ReadEventRegister()
+  Debug -   0.237852 s     32.5 uS    Command: *ESR?
+  Debug -   0.238603 s    751.5 uS    Response: +1
+  Debug -   0.238643 s     40.0 uS    Command: *ESR?
+  Debug -   0.239276 s    632.7 uS    Response: +0
+   Info -   0.239294 s     17.5 uS    Returned: ret=OperationComplete
+   Info -   0.240264 s    970.0 uS  Kt33000StatusImpl::GetServiceRequestEvent()
+   Info -   0.240271 s      7.8 uS    Returned: KtEventT<Keysight::Kt33000::ServiceRequestEventArgs>
+   Info -   0.240315 s     43.3 uS  Status.Clear()
+  Debug -   0.240346 s     31.5 uS    Command: *CLS
+  Debug -   0.240604 s    258.2 uS    Command: *ESR?
+  Debug -   0.241401 s    796.1 uS    Response: +0
+   Info -   0.241436 s     35.9 uS  Status.EnableServiceRequestEvents()
+   Info -   0.241622 s    185.8 uS  System.WriteString(data=*OPC)
+  Debug -   0.241623 s      800 nS    Command: *OPC
+   Info -   0.243263 s      1.6 mS  System.ClearIO()
+   Info -   0.309957 s     66.7 mS  StatusStandardEvent.ReadEventRegister()
+  Debug -   0.310011 s     54.7 uS    Command: *ESR?
+  Debug -   0.313180 s      3.2 mS    Response: +1
+  Debug -   0.313207 s     27.0 uS    Command: *ESR?
+  Debug -   0.313819 s    612.2 uS    Response: +0
+   Info -   0.313830 s     10.6 uS    Returned: ret=OperationComplete
+   Info -   0.742659 s    428.8 mS  System.WriteString(data=FREQuency 42069)
+  Debug -   0.742663 s      3.6 uS    Command: FREQuency 42069
+   Info -   2.744052 s    2.001 s  System.WriteString(data=FREQuency 69696.969)
+  Debug -   2.744056 s      4.0 uS    Command: FREQuency 69696.969
+   Info -   2.745395 s      1.3 mS  SystemTracing.GetFileName()
+   Info -   2.745409 s     14.5 uS    Returned: value=Kt33000_LogOutput.txt
+   Info -   2.746622 s      1.2 mS  --- Kt33000.Close() ---
+   Info -   2.748239 s      1.6 mS  2022-11-23 14_05_31 - flush request
