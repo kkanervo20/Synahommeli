@@ -9,7 +9,10 @@ import numpy as np  # For keysight_kt33000 arrays
 
 from audiolazy import midi2freq
 
+num = 0
+
 def midi_received(data, unused):
+    global num
     msg, delta_time = data
     if len(msg) > 2:
         if msg[0] == 153:  # note on, channel 9
@@ -21,12 +24,16 @@ def midi_received(data, unused):
             print("MPD218 Pad (%d, %d): %d" % (row, col, velocity))
             return
     print("MIDI message: ", msg)
-    driver.system.write_string("FREQuency %f" % (midi2freq(msg[1]-36 % 16)))
-    print("FREQuency: %f \t Midi: %d" % (midi2freq(msg[1]-36 % 16), msg[1]-36 % 16))
+    print("FREQuency: %f \t Midi: %d \t I: %d" % (midi2freq(msg[1]-36 % 16), msg[1]-36 % 16, num))
     if msg[2] > 70:
+        driver.system.write_string("FREQuency %f" % (midi2freq(msg[1]-36 % 16)))
         driver.system.write_string("OUTPut ON")
+        num += 1
     else:
+        num -= 1
+    if num <= 0:
         driver.system.write_string("OUTPut OFf")
+        num = 0
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -41,6 +48,8 @@ if __name__ == "__main__":
     idQuery = True
     reset   = True
     options = "QueryInstrStatus=true, Simulate=false, Trace=true"
+
+    
 
     # Call driver constructor with options
     global driver # May be used in other functions

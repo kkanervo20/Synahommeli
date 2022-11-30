@@ -1418,3 +1418,17 @@
   Error -   0.046250 s     46.3 mS  VI_ERROR_NCIC: Not the controller-in-charge
    Info -   0.048169 s      1.9 mS  --- Kt33000.Close() ---
    Info -   0.048669 s    499.5 uS  2022-11-23 14_37_09 - flush request
+
+  Level     TimeStamp    DeltaTime    Message
+   Info -   0.000000 s        0 nS  Kt33000(USB0::0x0699::0x0350::C012405::0::INSTR, true, true, QueryInstrStatus=true, Simulate=false, Trace=true)
+  Debug -   0.066943 s     66.9 mS    Command: *IDN?
+  Debug -   0.080004 s     13.1 mS    Response: TEKTRONIX,AFG3021C,C012405,SCPI:99.0 FV:1.0.5
+  Error -   0.080060 s     55.9 uS    Instrument ID query failed.  Model 'AFG3021C' not supported.  Supported models: 33609A, 33610A, 33611A, 33612A, 33619A, 33620A, 33621A, 33622A, EDU33211A, EDU33212A, 33521A, 33522A, 33509B, 33510B, 33511B, 33512B, 33519B, 33520B, 33521B, 33522B, 33210A, 33220A
+   Info -   0.085700 s      5.6 mS  --- Kt33000.Close() ---
+   Info -   0.087833 s      2.1 mS  2022-11-30 14_22_25 - flush request
+
+  Level     TimeStamp    DeltaTime    Message
+   Info -   0.000000 s        0 nS  Kt33000(USB0::0x0957::0x0407::MY44016868::0::INSTR, true, true, QueryInstrStatus=true, Simulate=false, Trace=true)
+  Error -   0.054642 s     54.6 mS  VI_ERROR_NCIC: Not the controller-in-charge
+   Info -   0.055384 s    741.8 uS  --- Kt33000.Close() ---
+   Info -   0.055924 s    539.8 uS  2022-11-30 14_22_41 - flush request
