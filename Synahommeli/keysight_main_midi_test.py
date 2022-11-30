@@ -9,22 +9,26 @@ import numpy as np  # For keysight_kt33000 arrays
 
 from audiolazy import midi2freq
 
-num = 0
+keys = []
 
 def midi_received(data, unused):
-    global num
+    global keys
     msg, delta_time = data
     print("MIDI message: ", msg)
-    print("FREQuency: %f \t Midi: %d \t I: %d" % (midi2freq(msg[1]-36 % 16), msg[1]-36 % 16, num))
+    print("FREQuency: %f \t Midi: %d" % (midi2freq(msg[1]-36 % 16), msg[1]-36 % 16))
     if msg[2] > 70:
-        driver.system.write_string("FREQuency %f" % (midi2freq(msg[1]-36 % 16)))
+        keys.append(midi2freq(msg[1]-36 % 16))
+        driver.system.write_string("FREQuency %f" % (keys[len(keys)-1]))
         driver.system.write_string("OUTPut ON")
-        num += 1
     else:
-        num -= 1
-    if num <= 0:
-        driver.system.write_string("OUTPut OFf")
-        num = 0
+        if len(keys)-1 <= 0:
+            keys.pop()
+            driver.system.write_string("OUTPut OFf")
+        else:
+            print(len(keys))
+            keys.remove(midi2freq(msg[1]-36 % 16))
+            driver.system.write_string("FREQuency %f" % (keys[len(keys)-1]))
+    
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
