@@ -23,6 +23,10 @@ def midi_received(data, unused):
     print("MIDI message: ", msg)
     driver.system.write_string("FREQuency %f" % (midi2freq(msg[1]-36 % 16)))
     print("FREQuency: %f \t Midi: %d" % (midi2freq(msg[1]-36 % 16), msg[1]-36 % 16))
+    if msg[2] > 70:
+        driver.system.write_string("OUTPut ON")
+    else:
+        driver.system.write_string("OUTPut OFf")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -46,6 +50,12 @@ if __name__ == "__main__":
     driver.status.standard_event.enable_register = keysight_kt33000.StatusStandardEventFlags.OPERATION_COMPLETE
     driver.status.service_request_enable_register = keysight_kt33000.StatusByteFlags.STANDARD_EVENT_SUMMARY
     driver.status.clear() # Clear error queue and event registers for new events
+
+    driver.system.write_string("FUNCtion SINusoid")
+    driver.system.write_string("OUTPut:HIGH Z")
+    driver.system.write_string("VOLTage 1")
+    driver.system.write_string("OUTPut OFf")
+
 
     # Initialize the MIDI input system and read the currently available ports.
     midi_in = rtmidi.MidiIn()
