@@ -1432,3 +1432,15 @@
   Error -   0.054642 s     54.6 mS  VI_ERROR_NCIC: Not the controller-in-charge
    Info -   0.055384 s    741.8 uS  --- Kt33000.Close() ---
    Info -   0.055924 s    539.8 uS  2022-11-30 14_22_41 - flush request
+
+  Level     TimeStamp    DeltaTime    Message
+   Info -   0.000000 s        0 nS  Kt33000(USB0::0x0957::0x0407::MY44016868::0::INSTR, true, true, QueryInstrStatus=true, Simulate=false, Trace=true)
+  Error -   0.093397 s     93.4 mS  VI_ERROR_NCIC: Not the controller-in-charge
+   Info -   0.094144 s    746.6 uS  --- Kt33000.Close() ---
+   Info -   0.095376 s      1.2 mS  2022-12-14 09_53_14 - flush request
+
+  Level     TimeStamp    DeltaTime    Message
+   Info -   0.000000 s        0 nS  Kt33000(USB0::0x0957::0x0407::MY44016868::0::INSTR, true, true, QueryInstrStatus=true, Simulate=false, Trace=true)
+  Error -   0.074722 s     74.7 mS  VI_ERROR_NCIC: Not the controller-in-charge
+   Info -   0.075479 s    757.1 uS  --- Kt33000.Close() ---
+   Info -   0.076327 s    847.7 uS  2022-12-14 09_59_34 - flush request

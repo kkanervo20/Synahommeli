@@ -16,7 +16,7 @@ def midi_received(data, unused):
     msg, delta_time = data
     print("MIDI message: ", msg)
     print("FREQuency: %f \t Midi: %d" % (midi2freq(msg[1]-36 % 16), msg[1]-36 % 16))
-    if msg[2] > 70:
+    if msg[2] > 2:
         keys.append(midi2freq(msg[1]-36 % 16))
         driver.system.write_string("FREQuency %f" % (keys[len(keys)-1]))
         driver.system.write_string("OUTPut ON")
@@ -55,7 +55,7 @@ if __name__ == "__main__":
 
     driver.system.write_string("FUNCtion SINusoid")
     driver.system.write_string("OUTPut:HIGH Z")
-    driver.system.write_string("VOLTage 1")
+    driver.system.write_string("VOLTage 0.05")
     driver.system.write_string("OUTPut OFf")
 
 
