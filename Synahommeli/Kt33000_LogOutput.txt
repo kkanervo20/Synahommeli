@@ -1,0 +1,6 @@
+
+  Level     TimeStamp    DeltaTime    Message
+   Info -   0.000000 s        0 nS  Kt33000(USB0::0x0957::0x0407::MY44016868::0::INSTR, true, true, QueryInstrStatus=true, Simulate=false, Trace=true)
+  Error -   0.591570 s    591.6 mS  VI_ERROR_NCIC: Not the controller-in-charge
+   Info -   0.595541 s      4.0 mS  --- Kt33000.Close() ---
+   Info -   0.597534 s      2.0 mS  2022-12-14 09_52_22 - flush request

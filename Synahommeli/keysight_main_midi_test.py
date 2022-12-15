@@ -9,31 +9,26 @@ import numpy as np  # For keysight_kt33000 arrays
 
 from audiolazy import midi2freq
 
-num = 0
+keys = []
 
 def midi_received(data, unused):
-    global num
+    global keys
     msg, delta_time = data
-    if len(msg) > 2:
-        if msg[0] == 153:  # note on, channel 9
-            key = (msg[1] - 36) % 16
-            row = key // 4
-            col = key % 4
-            velocity = msg[2]
-            print("FREQuency %d" % (row*10))
-            print("MPD218 Pad (%d, %d): %d" % (row, col, velocity))
-            return
     print("MIDI message: ", msg)
-    print("FREQuency: %f \t Midi: %d \t I: %d" % (midi2freq(msg[1]-36 % 16), msg[1]-36 % 16, num))
-    if msg[2] > 70:
-        driver.system.write_string("FREQuency %f" % (midi2freq(msg[1]-36 % 16)))
+    print("FREQuency: %f \t Midi: %d" % (midi2freq(msg[1]-36 % 16), msg[1]-36 % 16))
+    if msg[2] > 2:
+        keys.append(midi2freq(msg[1]-36 % 16))
+        driver.system.write_string("FREQuency %f" % (keys[len(keys)-1]))
         driver.system.write_string("OUTPut ON")
-        num += 1
     else:
-        num -= 1
-    if num <= 0:
-        driver.system.write_string("OUTPut OFf")
-        num = 0
+        if len(keys)-1 <= 0:
+            keys.pop()
+            driver.system.write_string("OUTPut OFf")
+        else:
+            print(len(keys))
+            keys.remove(midi2freq(msg[1]-36 % 16))
+            driver.system.write_string("FREQuency %f" % (keys[len(keys)-1]))
+    
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -49,8 +44,6 @@ if __name__ == "__main__":
     reset   = True
     options = "QueryInstrStatus=true, Simulate=false, Trace=true"
 
-    
-
     # Call driver constructor with options
     global driver # May be used in other functions
     driver = None
@@ -62,7 +55,7 @@ if __name__ == "__main__":
 
     driver.system.write_string("FUNCtion SINusoid")
     driver.system.write_string("OUTPut:HIGH Z")
-    driver.system.write_string("VOLTage 1")
+    driver.system.write_string("VOLTage 0.05")
     driver.system.write_string("OUTPut OFf")
 
 
