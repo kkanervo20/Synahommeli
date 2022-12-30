@@ -1,0 +1,9 @@
+Agilent 33220A 20 MHz Function/Arbitrary Waveform Generator Data Sheet:
+https://res.cloudinary.com/iwh/image/upload/q_auto,g_center/assets/1/26/Documents/Agilent/agilent5988-8544en.pdf
+http://lmu.web.psi.ch/docu/manuals/bulk_manuals/Agilent/33220-90010.pdf
+http://www.emboxit.net/mw/index.php?title=AGILENT_33220A_PYTHON
+http://ecelabs.njit.edu/student_resources/33220_user_guide.pdf
+https://pyvisa.readthedocs.io/en/latest/api/visalibrarybase.html
+https://pyvisa.readthedocs.io/en/stable/introduction/shell.html
+https://courses.ideate.cmu.edu/16-375/f2021/text/code/midi-examples.html
+https://pythonhosted.org/audiolazy/lazy_midi.html
