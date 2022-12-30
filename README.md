@@ -25,8 +25,6 @@ This was the plan for the hardware, but changes were made to "Raspberry Pi" and 
 The software is a single python script that uses rtmidi to connect to the MIDI-USB -interface and the keysight_kt33000 package to connect to the function generator. Audiolazy is used to convert from MIDI to frequency for the function generator.
 
 
-## Caveats
-
 ## Improvement suggestions for possible future revisions
 
 One possibility could be to run the code on a Raspberry Pi or similar device, which would allow for a more portable and self-contained setup. This could also allow for the addition of additional features or functionality, such as the ability to control the synthesizer remotely or over a network. It may also be possible to incorporate additional hardware or software components to expand the capabilities of the synthesizer.
